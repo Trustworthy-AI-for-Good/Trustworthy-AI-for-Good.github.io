@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI4GOOD @ ICML 2026 — Trustworthy AI for Good</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== GOOGLE SITES RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 15px;
+      color: #3c4043;
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== GOOGLE SITES TOP NAV ===== */
+    .gsites-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #dadce0;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+    .gsites-nav-inner {
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .gsites-nav-title {
+      font-size: 22px;
+      font-weight: 400;
+      color: #3c4043;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .gsites-nav-links {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      margin-left: auto;
+    }
+    .gsites-nav-links li a {
+      display: block;
+      padding: 20px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #3c4043;
+      text-decoration: none;
+      letter-spacing: 0.25px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .gsites-nav-links li a:hover {
+      border-bottom-color: #1a73e8;
+      color: #1a73e8;
+      text-decoration: none;
+    }
+
+    /* ===== HERO / TITLE BANNER (Google Sites style) ===== */
+    .gsites-hero {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 72px;
+      position: relative;
+    }
+    .gsites-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: #1a73e8;
+    }
+    .gsites-hero .hero-overline {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 16px;
+    }
+    .gsites-hero h1 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .gsites-hero .hero-sub {
+      font-size: 20px;
+      font-weight: 300;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+    .gsites-hero .hero-meta {
+      font-size: 16px;
+      font-weight: 400;
+      opacity: 0.6;
+      margin-bottom: 28px;
+    }
+    .gsites-hero .hero-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .gsites-hero .hero-links a {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.25px;
+    }
+    .gsites-hero .btn-primary {
+      background: #1a73e8;
+      color: #fff;
+    }
+    .gsites-hero .btn-primary:hover { background: #1765cc; text-decoration: none; }
+    .gsites-hero .btn-outline {
+      border: 1px solid rgba(255,255,255,0.5);
+      color: #fff;
+    }
+    .gsites-hero .btn-outline:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    .gsites-hero .hero-theme {
+      font-size: 14px;
+      opacity: 0.6;
+    }
+    .gsites-hero .hero-theme strong { opacity: 1; }
+
+    /* ===== CONTENT SECTIONS (Google Sites style) ===== */
+    .gsites-section {
+      padding: 48px 24px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .gsites-section:last-of-type { border-bottom: none; }
+    .gsites-section.bg-light {
+      background: #f8f9fa;
+    }
+    .gsites-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gsites-section h2 {
+      font-size: 28px;
+      font-weight: 400;
+      color: #202124;
+      margin-bottom: 16px;
+    }
+    .gsites-section h3 {
+      font-size: 18px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 8px;
+      margin-top: 24px;
+    }
+    .gsites-section p {
+      margin-bottom: 12px;
+      color: #3c4043;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ===== HIGHLIGHTS ROW ===== */
+    .highlights-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .highlight-chip {
+      flex: 1;
+      background: #e8f0fe;
+      border-radius: 8px;
+      padding: 16px 20px;
+      text-align: center;
+    }
+    .highlight-chip h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a73e8;
+      margin-bottom: 4px;
+    }
+    .highlight-chip p {
+      font-size: 13px;
+      color: #5f6368;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ===== TOPICS GRID ===== */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .topic-card {
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fff;
+    }
+    .topic-card h3 {
+      margin-top: 0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .topic-card p {
+      font-size: 14px;
+      color: #5f6368;
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+    .topic-card.special {
+      border-left: 3px solid #1a73e8;
+      background: #f8f9fa;
+    }
+    .topic-card.special .special-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a73e8;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    /* ===== SUBMISSION ITEMS ===== */
+    .submission-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #e8eaed;
+      align-items: flex-start;
+    }
+    .submission-item:last-child { border-bottom: none; }
+    .check-icon {
+      flex-shrink: 0;
+      color: #1a73e8;
+      font-size: 18px;
+      margin-top: 1px;
+      font-weight: 700;
+    }
+    .submission-item p { margin: 0; font-size: 14px; }
+
+    .encourage-list {
+      margin-top: 16px;
+      padding-left: 24px;
+    }
+    .encourage-list li {
+      font-size: 14px;
+      color: #5f6368;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    /* ===== PRESENTATION BOXES ===== */
+    .pres-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .pres-box {
+      flex: 1;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .pres-box h4 {
+      font-size: 15px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 4px;
+    }
+    .pres-box p { font-size: 14px; color: #5f6368; margin: 0; }
+
+    /* ===== DATES ===== */
+    .dates-table { margin-top: 16px; width: 100%; }
+    .date-row {
+      display: flex;
+      padding: 14px 0;
+      border-bottom: 1px solid #e8eaed;
+      align-items: center;
+    }
+    .date-row:last-child { border-bottom: none; }
+    .date-row .date-val {
+      width: 180px;
+      flex-shrink: 0;
+      font-weight: 500;
+      font-size: 14px;
+      color: #1a73e8;
+    }
+    .date-row .date-label { font-size: 14px; color: #3c4043; }
+
+    /* ===== PEOPLE GRID (Google Sites circular photos) ===== */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .person-card { text-align: center; }
+    .person-card img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 12px;
+      background: #e8eaed;
+    }
+    .person-card .initials-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: #1a73e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 400;
+      margin: 0 auto 12px;
+    }
+    .person-card h4 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #202124;
+      margin-bottom: 2px;
+    }
+    .person-card .aff {
+      font-size: 13px;
+      color: #5f6368;
+      margin-bottom: 4px;
+    }
+    .person-card .bio {
+      font-size: 12px;
+      color: #5f6368;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    .person-card a { font-size: 13px; }
+
+    /* ===== ORGANIZERS ===== */
+    .organizers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 24px;
+    }
+    .org-card { text-align: center; }
+    .org-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 10px;
+      background: #e8eaed;
+    }
+    .org-card .initials-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: #1a73e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      font-weight: 400;
+      margin: 0 auto 10px;
+    }
+    .org-card h4 { font-size: 14px; font-weight: 500; color: #202124; margin-bottom: 2px; }
+    .org-card .aff { font-size: 13px; color: #5f6368; }
+
+    /* ===== FOOTER (Google Sites style) ===== */
+    .gsites-footer {
+      background: #f1f3f4;
+      padding: 20px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #5f6368;
+      border-top: 1px solid #dadce0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .gsites-hero h1 { font-size: 32px; }
+      .highlights-row { flex-direction: column; }
+      .topics-grid { grid-template-columns: 1fr; }
+      .people-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+      .pres-row { flex-direction: column; }
+      .date-row { flex-direction: column; gap: 2px; }
+      .date-row .date-val { width: auto; }
+      .gsites-nav-links li a { padding: 20px 10px; font-size: 12px; }
+    }
+    @media (max-width: 480px) {
+      .people-grid { grid-template-columns: 1fr; }
+      .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+      .gsites-nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="gsites-nav">
+  <div class="gsites-nav-inner">
+    <a href="#" class="gsites-nav-title">AI4GOOD</a>
+    <ul class="gsites-nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#topics">Call for Papers</a></li>
+      <li><a href="#submission">Submission</a></li>
+      <li><a href="#dates">Dates</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#organizers">Organizers</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="gsites-hero">
+  <div class="hero-overline">ICML 2026 Workshop</div>
+  <h1>Trustworthy AI for Good</h1>
+  <p class="hero-sub">Bridging AI Safety, Social Good, and Governance</p>
+  <p class="hero-meta">July 10&ndash;11, 2026 &middot; Seoul, South Korea</p>
+  <div class="hero-links">
+    <a href="#submission" class="btn-primary">Submit a Paper</a>
+    <a href="#dates" class="btn-outline">Key Dates</a>
+  </div>
+  <p class="hero-theme"><strong>Special Theme:</strong> AI for Civic Discourse and Democratic Defense</p>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div class="gsites-section" id="overview">
+  <div class="gsites-container">
+    <h2>Workshop Overview</h2>
+    <p>
+      Agentic AI systems increasingly shape how billions of people engage with public institutions, civic discourse, and society at large. While much work has focused on making models safer in avoiding harmful output, it is equally important for these improvements to translate into social good at scale.
+    </p>
+    <p>
+      The <strong>AI4GOOD</strong> workshop brings together the <strong>AI safety</strong>, <strong>AI for social good</strong>, and <strong>AI policy/governance</strong> communities to connect what models can do as individual systems with what they do when deployed across populations. We aim to bridge technical advances in trustworthy AI with real-world societal impact, including protecting democratic institutions and civic discourse.
+    </p>
+    <div class="highlights-row">
+      <div class="highlight-chip">
+        <h4>Non-Archival</h4>
+        <p>Accepted work can be submitted to or published at other venues.</p>
+      </div>
+      <div class="highlight-chip">
+        <h4>Double-Blind Review</h4>
+        <p>All submissions reviewed via OpenReview with full anonymization.</p>
+      </div>
+      <div class="highlight-chip">
+        <h4>Travel Support</h4>
+        <p>Funding available for scholars from under-represented communities.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CALL FOR PAPERS ===== -->
+<div class="gsites-section bg-light" id="topics">
+  <div class="gsites-container">
+    <h2>Call for Papers</h2>
+    <p>We welcome submissions on technical approaches for safer and more beneficial AI, as well as applications of AI for social good.</p>
+    <div class="topics-grid">
+      <div class="topic-card">
+        <h3>Trustworthy AI Models</h3>
+        <p>Evaluation, auditing, and red-teaming of models for harmful behaviors and failure modes; safety monitoring after deployment; alignment and robustness methods.</p>
+      </div>
+      <div class="topic-card">
+        <h3>AI for Social Good</h3>
+        <p>Methods, evidence standards, and evaluation frameworks for demonstrating real-world benefit and avoiding unintended harms at population scale.</p>
+      </div>
+      <div class="topic-card">
+        <h3>AI for Civic Discourse</h3>
+        <p>AI systems that support public deliberation and civic engagement while preserving legitimacy and avoiding undue influence.</p>
+      </div>
+      <div class="topic-card">
+        <h3>AI for Public Institutions</h3>
+        <p>Accountable use of AI in government and civic settings, including transparency, documentation, procurement, and oversight practices.</p>
+      </div>
+      <div class="topic-card special">
+        <span class="special-label">Special Theme</span>
+        <h3>AI for Democracy Defense</h3>
+        <p>Detection and mitigation of disinformation, manipulation, and influence operations; building resilience of the information ecosystem.</p>
+      </div>
+      <div class="topic-card">
+        <h3>Interdisciplinary &amp; Applied Work</h3>
+        <p>Deployment case studies (including negative results and failures), scalable pathways for responsible deployment, and novel evaluation frameworks for AI's societal impact.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SUBMISSION ===== -->
+<div class="gsites-section" id="submission">
+  <div class="gsites-container">
+    <h2>Submission Guidelines</h2>
+    <div class="submission-item">
+      <span class="check-icon">&#10003;</span>
+      <p><strong>Format:</strong> Papers should be 2&ndash;8 pages (excluding references and appendices) using the <a href="https://icml.cc/Conferences/2026/AuthorInstructions">ICML 2026 style</a>.</p>
+    </div>
+    <div class="submission-item">
+      <span class="check-icon">&#10003;</span>
+      <p><strong>Review Process:</strong> All submissions will be reviewed double-blind via <a href="https://openreview.net/">OpenReview</a>. Please ensure your submission is fully anonymized.</p>
+    </div>
+    <div class="submission-item">
+      <span class="check-icon">&#10003;</span>
+      <p><strong>Non-Archival:</strong> Accepted papers will be posted on the workshop website but will not appear in formal proceedings. Work may be submitted to or published at other venues.</p>
+    </div>
+    <div class="submission-item">
+      <span class="check-icon">&#10003;</span>
+      <p><strong>Previously Published Work:</strong> Submissions must present work not previously published in archival proceedings. Work at non-archival workshops or currently under review elsewhere is permitted.</p>
+    </div>
+    <div class="submission-item">
+      <span class="check-icon">&#10003;</span>
+      <p><strong>OpenReview Accounts:</strong> All authors must have an active <a href="https://openreview.net/">OpenReview</a> profile before submitting.</p>
+    </div>
+
+    <h3>We Particularly Encourage</h3>
+    <ul class="encourage-list">
+      <li>Work bridging technical AI safety research with real-world applications</li>
+      <li>Interdisciplinary collaborations (e.g., with social science, law, policy, journalism)</li>
+      <li>Deployment experiences, including lessons from failures</li>
+      <li>Novel evaluation frameworks for measuring AI's societal impact</li>
+      <li>Perspectives from underrepresented communities and the Global South</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== PRESENTATION & AWARDS ===== -->
+<div class="gsites-section bg-light">
+  <div class="gsites-container">
+    <h2>Presentation &amp; Awards</h2>
+    <p>Accepted papers will be selected for one of the following:</p>
+    <div class="pres-row">
+      <div class="pres-box">
+        <h4>Contributed Oral Talk</h4>
+        <p>20 minutes &mdash; up to 6 papers selected</p>
+      </div>
+      <div class="pres-box">
+        <h4>Poster Presentation</h4>
+        <p>Across two poster sessions (morning and afternoon)</p>
+      </div>
+    </div>
+    <p style="margin-top: 16px;">
+      Outstanding papers will be recognized with <strong>Best Paper Awards</strong>, supported by compute credit grants from <a href="https://www.thetaedgecloud.com/">Theta Lab</a>. We will also recognize the most responsible reviewers with compute-credit awards.
+    </p>
+  </div>
+</div>
+
+<!-- ===== DATES ===== -->
+<div class="gsites-section" id="dates">
+  <div class="gsites-container">
+    <h2>Important Dates</h2>
+    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong>.</p>
+    <div class="dates-table">
+      <div class="date-row">
+        <div class="date-val">March 21, 2026</div>
+        <div class="date-label">Submission Portal Opens</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">April 24, 2026</div>
+        <div class="date-label">Submission Deadline</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">May 15, 2026</div>
+        <div class="date-label">Author Notification</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">July 10&ndash;11, 2026</div>
+        <div class="date-label">Workshop Date</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SPEAKERS ===== -->
+<div class="gsites-section bg-light" id="speakers">
+  <div class="gsites-container">
+    <h2>Speakers and Panelists</h2>
+    <div class="people-grid">
+      <div class="person-card">
+        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
+        <h4><a href="https://yoshuabengio.org/">Yoshua Bengio</a></h4>
+        <p class="aff">University of Montreal &amp; Mila</p>
+        <p class="bio">Scientific Director of Mila. His foundational work on deep learning has shaped modern AI; his recent focus is on AI safety, societal risk, and governance.</p>
+      </div>
+      <div class="person-card">
+        <img src="images/joel_leibo.jpg" alt="Joel Leibo" />
+        <h4><a href="https://www.jzleibo.com/">Joel Leibo</a></h4>
+        <p class="aff">Google DeepMind</p>
+        <p class="bio">Senior Staff Research Scientist. His research on multi-agent learning includes the Melting Pot suite and the Concordia Contest.</p>
+      </div>
+      <div class="person-card">
+        <img src="images/maksym_andriushchenko.jpg" alt="Maksym Andriushchenko" />
+        <h4><a href="https://andriushchenko.me/">Maksym Andriushchenko</a></h4>
+        <p class="aff">ELLIS &amp; MPI T&uuml;bingen</p>
+        <p class="bio">Principal Investigator. His research emphasizes rigorous red-teaming and practical methods for making AI systems more dependable.</p>
+      </div>
+      <div class="person-card">
+        <img src="images/oana_ignat.jpg" alt="Oana Ignat" />
+        <h4><a href="https://oanaignat.github.io/">Oana Ignat</a></h4>
+        <p class="aff">Santa Clara University</p>
+        <p class="bio">Assistant Professor. Her research on multilingual and multimodal AI focuses on systems that work fairly across languages and communities.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TRAVEL SUPPORT ===== -->
+<div class="gsites-section">
+  <div class="gsites-container">
+    <h2>Travel Support</h2>
+    <p>
+      <a href="https://www.schmidtsciences.org/">Schmidt Sciences</a> will provide funding to support scholars from under-represented and under-served communities to attend the workshop. Details on how to apply will be posted on the workshop website.
+    </p>
+  </div>
+</div>
+
+<!-- ===== ORGANIZERS ===== -->
+<div class="gsites-section bg-light" id="organizers">
+  <div class="gsites-container">
+    <h2>Organizing Committee</h2>
+    <div class="organizers-grid">
+      <div class="org-card">
+        <div class="initials-circle">TZ</div>
+        <h4>Terry Jingchen Zhang</h4>
+        <p class="aff">Vector Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/zhijing_jin.png" alt="Zhijing Jin" />
+        <h4>Zhijing Jin</h4>
+        <p class="aff">University of Toronto &amp; CHAI</p>
+      </div>
+      <div class="org-card">
+        <img src="images/rada_mihalcea.jpg" alt="Rada Mihalcea" />
+        <h4>Rada Mihalcea</h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
+        <h4>Milind Tambe</h4>
+        <p class="aff">Harvard University &amp; Google Research</p>
+      </div>
+      <div class="org-card">
+        <img src="images/david_lie.jpg" alt="David Lie" />
+        <h4>David Lie</h4>
+        <p class="aff">University of Toronto &amp; Schwartz Reisman Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/joan_nwatu.jpg" alt="Joan Nwatu" />
+        <h4>Joan Nwatu</h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/david_guzman.jpg" alt="David Guzman Piedrahita" />
+        <h4>David Guzman Piedrahita</h4>
+        <p class="aff">ETH Zurich &amp; University of Zurich</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div class="gsites-section">
+  <div class="gsites-container">
+    <h2>Contact</h2>
+    <p>
+      For questions and sponsorship, feel free to contact us at <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a>.
+    </p>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="gsites-footer">
+  AI4GOOD Workshop @ ICML 2026 &middot; Seoul, South Korea
+</div>
+
+</body>
+</html>
