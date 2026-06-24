@@ -400,6 +400,12 @@
       margin-top: 24px;
     }
     .org-card { text-align: center; }
+    #sponsors .organizers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #sponsors .org-card { flex: 0 0 calc(25% - 21px); }
     .org-card img {
       width: 120px;
       height: 120px;
@@ -443,6 +449,7 @@
       .people-grid { gap: 24px; }
       .person-card { flex: 0 0 calc(50% - 12px); }
       .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+      #sponsors .org-card { flex: 0 0 calc(50% - 14px); }
       .pres-row { flex-direction: column; }
       .date-row { flex-direction: column; gap: 2px; }
       .date-row .date-val { width: auto; }
@@ -490,6 +497,80 @@
   <!-- <p class="hero-note">Reviewers: Please don't send Email application! All you need to do is fill in the form above! We will have several <strong>Top Reviewer</strong> awards!</p> -->
   <!-- <p class="hero-note">Authors: Instead of asking scope questions, we encourage you to just submit to multiple workshops that might be a good fit! We have <strong>Top Paper</strong> awards for both cooperative AI and general track!</a>.</p> -->
   <p class="hero-note">Sponsors: We're open for sponsorship with PR benefits! Please email <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a> directly! </p>
+</div>
+
+<!-- ===== SCHEDULE ===== -->
+<div class="gsites-section bg-light" id="schedule">
+  <div class="gsites-container">
+    <h2>Workshop Schedule</h2>
+    <p>July 10, 2026 &middot; All times are in Seoul local time (KST).</p>
+    <div class="dates-table">
+      <div class="date-row">
+        <div class="date-val">07:30&ndash;07:40</div>
+        <div class="date-label">Room Setup</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">07:40&ndash;08:00</div>
+        <div class="date-label">Speaker A/V Check + Travel-Support Check-In</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">08:00&ndash;08:20</div>
+        <div class="date-label">Opening Remarks</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">08:20&ndash;08:50</div>
+        <div class="date-label">Joel Leibo &mdash; Keynote</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">08:50&ndash;10:00</div>
+        <div class="date-label">Coffee Break + Poster Session A</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">10:00&ndash;11:00</div>
+        <div class="date-label">Panel Discussion</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">11:00&ndash;12:00</div>
+        <div class="date-label">Oral Session I</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">12:00&ndash;13:00</div>
+        <div class="date-label">Lunch</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">13:00&ndash;13:30</div>
+        <div class="date-label">Naman Goyal + Jenny Ni &mdash; Keynote</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">13:30&ndash;14:45</div>
+        <div class="date-label">Oral Session II</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">14:45&ndash;15:30</div>
+        <div class="date-label">Coffee Break + Poster Session B</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">15:30&ndash;15:55</div>
+        <div class="date-label">Oana Ignat &mdash; Keynote</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">15:55&ndash;16:20</div>
+        <div class="date-label">Maksym Andriushchenko &mdash; Keynote</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">16:20&ndash;16:45</div>
+        <div class="date-label">Yoshua Bengio &mdash; Keynote</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">16:45&ndash;17:00</div>
+        <div class="date-label">Awards &amp; Closing Remarks</div>
+      </div>
+      <div class="date-row">
+        <div class="date-val">17:00</div>
+        <div class="date-label">End</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ===== OVERVIEW ===== -->
@@ -557,6 +638,7 @@
       </div>
     </div>
 
+    <!-- prizes & awards hidden for now
     <h3>Prizes &amp; Awards</h3>
     <div class="topics-grid">
       <div class="topic-card">
@@ -576,6 +658,7 @@
         <p>Travel funding for under-represented groups.</p>
       </div>
     </div>
+    -->
   </div>
 </div>
 
@@ -721,6 +804,11 @@
         <h4><a href="https://www.gopalsarma.com/">Gopal Sarma</a></h4>
         <p class="aff">RAND Corporation</p>
       </div>
+      <div class="person-card">
+        <img src="images/david_duvenaud.jpg" alt="David Duvenaud" />
+        <h4><a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a></h4>
+        <p class="aff">University of Toronto</p>
+      </div>
     </div>
   </div>
 </div>
@@ -846,6 +934,14 @@
       <div class="org-card">
         <img src="images/aim_intelligence_logo.jpeg" alt="AIM Intelligence" />
         <h4><a href="https://www.aim-intelligence.com">AIM Intelligence</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/coefficient_giving_logo.jpeg" alt="Coefficient Giving" />
+        <h4><a href="https://coefficientgiving.org/">Coefficient Giving</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/bluedot_impact_logo.jpeg" alt="BlueDot Impact" />
+        <h4><a href="https://bluedot.org/">BlueDot Impact</a></h4>
       </div>
     </div>
   </div>
