@@ -405,7 +405,10 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    #sponsors .org-card { flex: 0 0 calc(25% - 21px); }
+    #sponsors .organizers-grid { flex-wrap: nowrap; gap: 16px; }
+    #sponsors .org-card { flex: 1 1 0; min-width: 0; }
+    #sponsors .org-card img { width: 100px; height: 100px; }
+    #sponsors .org-card .initials-circle { width: 100px; height: 100px; font-size: 24px; }
     .org-card img {
       width: 120px;
       height: 120px;
@@ -449,7 +452,8 @@
       .people-grid { gap: 24px; }
       .person-card { flex: 0 0 calc(50% - 12px); }
       .organizers-grid { grid-template-columns: repeat(2, 1fr); }
-      #sponsors .org-card { flex: 0 0 calc(50% - 14px); }
+      #sponsors .organizers-grid { flex-wrap: wrap; }
+      #sponsors .org-card { flex: 0 0 calc(33.33% - 11px); }
       .pres-row { flex-direction: column; }
       .date-row { flex-direction: column; gap: 2px; }
       .date-row .date-val { width: auto; }
@@ -551,15 +555,15 @@
       </div>
       <div class="date-row">
         <div class="date-val">15:30&ndash;15:55</div>
-        <div class="date-label">Oana Ignat &mdash; Keynote</div>
+        <div class="date-label">Yoshua Bengio &mdash; Keynote</div>
       </div>
       <div class="date-row">
         <div class="date-val">15:55&ndash;16:20</div>
-        <div class="date-label">Maksym Andriushchenko &mdash; Keynote</div>
+        <div class="date-label">Oana Ignat &mdash; Keynote</div>
       </div>
       <div class="date-row">
         <div class="date-val">16:20&ndash;16:45</div>
-        <div class="date-label">Yoshua Bengio &mdash; Keynote</div>
+        <div class="date-label">Maksym Andriushchenko &mdash; Keynote</div>
       </div>
       <div class="date-row">
         <div class="date-val">16:45&ndash;17:00</div>
@@ -568,6 +572,207 @@
       <div class="date-row">
         <div class="date-val">17:00</div>
         <div class="date-label">End</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SPEAKERS ===== -->
+<div class="gsites-section bg-light" id="speakers">
+  <div class="gsites-container">
+    <h2>Confirmed Speakers</h2>
+    <div class="people-grid">
+      <div class="person-card">
+        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
+        <h4><a href="https://yoshuabengio.org/">Yoshua Bengio</a></h4>
+        <p class="aff">University of Montreal &amp; Mila &amp; LawZero (Virtual)</p>
+      </div>
+      <div class="person-card">
+        <img src="images/oana_ignat.jpg" alt="Oana Ignat" />
+        <h4><a href="https://oanaignat.github.io/">Oana Ignat</a></h4>
+        <p class="aff">Santa Clara University</p>
+      </div>
+      <div class="person-card">
+        <img src="images/joel_leibo.jpg" alt="Joel Leibo" />
+        <h4><a href="https://www.jzleibo.com/">Joel Leibo</a></h4>
+        <p class="aff">Google DeepMind</p>
+      </div>
+      <div class="person-card">
+        <img src="images/maksym_andriushchenko.jpg" alt="Maksym Andriushchenko" />
+        <h4><a href="https://andriushchenko.me/">Maksym Andriushchenko</a></h4>
+        <p class="aff">ELLIS T&uuml;bingen &amp; MPI-IS</p>
+      </div>
+      <div class="person-card">
+        <img src="images/jenny_ni.jpg" alt="Jenny Ni" />
+        <h4><a href="https://www.linkedin.com/in/jennyni/">Jenny Ni</a></h4>
+        <p class="aff">Google</p>
+      </div>
+      <div class="person-card">
+        <img src="images/naman_goyal.jpeg" alt="Naman Goyal" />
+        <h4><a href="https://namangoyal.com/">Naman Goyal</a></h4>
+        <p class="aff">Google DeepMind</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PANELISTS ===== -->
+<div class="gsites-section" id="panelists">
+  <div class="gsites-container">
+    <h2>Confirmed Panelists</h2>
+    <div class="people-grid">
+      <div class="person-card">
+        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
+        <h4><a href="https://teamcore.seas.harvard.edu/tambe/">Milind Tambe</a></h4>
+        <p class="aff">Harvard University (Moderator)</p>
+      </div>
+      <div class="person-card">
+        <img src="images/lewis_hammond.jpg" alt="Lewis Hammond" />
+        <h4><a href="https://lewishammond.com/">Lewis Hammond</a></h4>
+        <p class="aff">Cooperative AI Foundation &amp; University of Oxford</p>
+      </div>
+      <div class="person-card">
+        <img src="images/gopal_sarma.jpg" alt="Gopal Sarma" />
+        <h4><a href="https://www.gopalsarma.com/">Gopal Sarma</a></h4>
+        <p class="aff">RAND Corporation</p>
+      </div>
+      <div class="person-card">
+        <img src="images/david_duvenaud.jpg" alt="David Duvenaud" />
+        <h4><a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a></h4>
+        <p class="aff">University of Toronto</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TRAVEL SUPPORT =====
+<div class="gsites-section">
+  <div class="gsites-container">
+    <h2>Travel Support</h2>
+    <p>
+      <a href="https://www.schmidtsciences.org/">Schmidt Sciences</a> will provide funding to support scholars from under-represented and under-served communities to attend the workshop. Details on how to apply will be posted on the workshop website.
+    </p>
+  </div>
+</div>
+   -->
+
+<!-- ===== ORGANIZERS ===== -->
+<div class="gsites-section bg-light" id="organizers">
+  <div class="gsites-container">
+    <h2>Organizing Team</h2>
+    <div class="organizers-grid">
+      <div class="org-card">
+        <img src="images/terry_zhang.jpg" alt="Terry Zhang" />
+        <h4>Terry Jingchen Zhang</h4>
+        <p class="aff">University of Oxford &amp; Vector Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/zhijing_jin.png" alt="Zhijing Jin" />
+        <h4>Zhijing Jin</h4>
+        <p class="aff">University of Toronto</p>
+      </div>
+      <div class="org-card">
+        <img src="images/rada_mihalcea.jpg" alt="Rada Mihalcea" />
+        <h4>Rada Mihalcea</h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
+        <h4>Milind Tambe</h4>
+        <p class="aff">Harvard University</p>
+      </div>
+      <div class="org-card">
+        <img src="images/david_lie.jpg" alt="David Lie" />
+        <h4>David Lie</h4>
+        <p class="aff">University of Toronto &amp; Schwartz Reisman Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/joan_nwatu.jpg" alt="Joan Nwatu" />
+        <h4>Joan Nwatu</h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/david_guzman.png" alt="David Guzman Piedrahita" />
+        <h4>David Guzman Piedrahita</h4>
+        <p class="aff">ETH Z&uuml;rich &amp; University of Z&uuml;rich</p>
+      </div>
+      <div class="org-card">
+        <img src="images/changling_li.jpg" alt=Changling Li" />
+        <h4>Changling Li</h4>
+        <p class="aff">ETH Z&uuml;rich &amp; MPI-IS</p>
+      </div>
+      <div class="org-card">
+        <img src="images/jerick_shi.jpg" alt=Jerick Shi" />
+        <h4>Jerick Shi</h4>
+        <p class="aff">Carnegie Mellon University</p>
+      </div>
+      <div class="org-card">
+        <img src="images/prakhar_gupta.jpg" alt=Prakhar Gupta" />
+        <h4>Prakhar Gupta</h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/van_truong.jpg" alt=Van Quynh Thi Truong" />
+        <h4>Van Quynh Thi Truong</h4>
+        <p class="aff">University of Pennsylvania</p>
+      </div>
+      <div class="org-card">
+        <img src="images/ettore_gran.jpg" alt=Ettore Gran" />
+        <h4>Ettore Gran</h4>
+        <p class="aff">EuroSafeAI</p>
+      </div>
+      <div class="org-card">
+        <img src="images/shawn_shuang.jpg" alt="He (Shawn) Shuang" />
+        <h4>He (Shawn) Shuang</h4>
+        <p class="aff">Palo Alto Networks</p>
+      </div>
+      <div class="org-card">
+        <img src="images/yejin_son.jpg" alt="Yejin Son" />
+        <h4>Yejin Son</h4>
+        <p class="aff">Yonsei University &amp; University of British Columbia</p>
+      </div>
+      <div class="org-card">
+        <img src="images/kexin_li.jpg" alt="Kexin Li" />
+        <h4>Kexin Li</h4>
+        <p class="aff">University of Toronto</p>
+      </div>
+      <div class="org-card">
+        <img src="images/wenjun_qiu.jpg" alt="Wenjun Qiu" />
+        <h4>Wenjun Qiu</h4>
+        <p class="aff">University of Toronto</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Sponsors ===== -->
+<div class="gsites-section bg-light" id="sponsors">
+  <div class="gsites-container">
+    <h2>Sponsors</h2>
+    <div class="organizers-grid">
+      <div class="org-card">
+        <img src="images/schmidt_sciences_logo.jpg" alt="Schmidt Sciences" />
+        <h4><a href="https://www.schmidtsciences.org">Schmidt Sciences</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/cooperative_ai_logo.jpg" alt="Cooperative AI Foundation" />
+        <h4><a href="https://www.cooperativeai.com/">Cooperative AI Foundation</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/aim_intelligence_logo.jpeg" alt="AIM Intelligence" />
+        <h4><a href="https://www.aim-intelligence.com">AIM Intelligence</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/coefficient_giving_logo.jpeg" alt="Coefficient Giving" />
+        <h4><a href="https://coefficientgiving.org/">Coefficient Giving</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/bluedot_impact_logo.jpeg" alt="BlueDot Impact" />
+        <h4><a href="https://bluedot.org/">BlueDot Impact</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/iaseai_logo.jpeg" alt="IASEAI" />
+        <h4><a href="https://www.iaseai.org/">International Association for Safe and Ethical AI</a></h4>
       </div>
     </div>
   </div>
@@ -740,208 +945,6 @@
       <div class="date-row">
         <div class="date-val">July 10, 2026</div>
         <div class="date-label">Workshop Date</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== SPEAKERS ===== -->
-<div class="gsites-section bg-light" id="speakers">
-  <div class="gsites-container">
-    <h2>Confirmed Speakers</h2>
-    <div class="people-grid">
-      <div class="person-card">
-        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
-        <h4><a href="https://yoshuabengio.org/">Yoshua Bengio</a></h4>
-        <p class="aff">University of Montreal &amp; Mila &amp; LawZero (Virtual)</p>
-      </div>
-      <div class="person-card">
-        <img src="images/oana_ignat.jpg" alt="Oana Ignat" />
-        <h4><a href="https://oanaignat.github.io/">Oana Ignat</a></h4>
-        <p class="aff">Santa Clara University</p>
-      </div>
-      <div class="person-card">
-        <img src="images/joel_leibo.jpg" alt="Joel Leibo" />
-        <h4><a href="https://www.jzleibo.com/">Joel Leibo</a></h4>
-        <p class="aff">Google DeepMind</p>
-      </div>
-      <div class="person-card">
-        <img src="images/maksym_andriushchenko.jpg" alt="Maksym Andriushchenko" />
-        <h4><a href="https://andriushchenko.me/">Maksym Andriushchenko</a></h4>
-        <p class="aff">ELLIS T&uuml;bingen &amp; MPI-IS</p>
-      </div>
-      <div class="person-card">
-        <img src="images/jenny_ni.jpg" alt="Jenny Ni" />
-        <h4><a href="https://www.linkedin.com/in/jennyni/">Jenny Ni</a></h4>
-        <p class="aff">Google</p>
-      </div>
-      <div class="person-card">
-        <img src="images/naman_goyal.jpeg" alt="Naman Goyal" />
-        <h4><a href="https://namangoyal.com/">Naman Goyal</a></h4>
-        <p class="aff">Google DeepMind</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PANELISTS ===== -->
-<div class="gsites-section" id="panelists">
-  <div class="gsites-container">
-    <h2>Confirmed Panelists</h2>
-    <div class="people-grid">
-      <div class="person-card">
-        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
-        <h4><a href="https://teamcore.seas.harvard.edu/tambe/">Milind Tambe</a></h4>
-        <p class="aff">Harvard University (Moderator)</p>
-      </div>
-      <div class="person-card">
-        <img src="images/lewis_hammond.jpg" alt="Lewis Hammond" />
-        <h4><a href="https://lewishammond.com/">Lewis Hammond</a></h4>
-        <p class="aff">Cooperative AI Foundation &amp; University of Oxford</p>
-      </div>
-      <div class="person-card">
-        <img src="images/gopal_sarma.jpg" alt="Gopal Sarma" />
-        <h4><a href="https://www.gopalsarma.com/">Gopal Sarma</a></h4>
-        <p class="aff">RAND Corporation</p>
-      </div>
-      <div class="person-card">
-        <img src="images/david_duvenaud.jpg" alt="David Duvenaud" />
-        <h4><a href="https://www.cs.toronto.edu/~duvenaud/">David Duvenaud</a></h4>
-        <p class="aff">University of Toronto</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== TRAVEL SUPPORT =====
-<div class="gsites-section">
-  <div class="gsites-container">
-    <h2>Travel Support</h2>
-    <p>
-      <a href="https://www.schmidtsciences.org/">Schmidt Sciences</a> will provide funding to support scholars from under-represented and under-served communities to attend the workshop. Details on how to apply will be posted on the workshop website.
-    </p>
-  </div>
-</div>
-   -->
-
-<!-- ===== ORGANIZERS ===== -->
-<div class="gsites-section bg-light" id="organizers">
-  <div class="gsites-container">
-    <h2>Organizing Team</h2>
-    <div class="organizers-grid">
-      <div class="org-card">
-        <img src="images/terry_zhang.jpg" alt="Terry Zhang" />
-        <h4>Terry Jingchen Zhang</h4>
-        <p class="aff">Vector Institute</p>
-      </div>
-      <div class="org-card">
-        <img src="images/zhijing_jin.png" alt="Zhijing Jin" />
-        <h4>Zhijing Jin</h4>
-        <p class="aff">University of Toronto</p>
-      </div>
-      <div class="org-card">
-        <img src="images/rada_mihalcea.jpg" alt="Rada Mihalcea" />
-        <h4>Rada Mihalcea</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
-        <h4>Milind Tambe</h4>
-        <p class="aff">Harvard University</p>
-      </div>
-      <div class="org-card">
-        <img src="images/david_lie.jpg" alt="David Lie" />
-        <h4>David Lie</h4>
-        <p class="aff">University of Toronto &amp; Schwartz Reisman Institute</p>
-      </div>
-      <div class="org-card">
-        <img src="images/joan_nwatu.jpg" alt="Joan Nwatu" />
-        <h4>Joan Nwatu</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/david_guzman.png" alt="David Guzman Piedrahita" />
-        <h4>David Guzman Piedrahita</h4>
-        <p class="aff">ETH Z&uuml;rich &amp; University of Z&uuml;rich</p>
-      </div>
-      <div class="org-card">
-        <img src="images/changling_li.jpg" alt=Changling Li" />
-        <h4>Changling Li</h4>
-        <p class="aff">ETH Z&uuml;rich &amp; MPI-IS</p>
-      </div>
-      <div class="org-card">
-        <img src="images/jerick_shi.jpg" alt=Jerick Shi" />
-        <h4>Jerick Shi</h4>
-        <p class="aff">Carnegie Mellon University</p>
-      </div>
-      <div class="org-card">
-        <img src="images/prakhar_gupta.jpg" alt=Prakhar Gupta" />
-        <h4>Prakhar Gupta</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/van_truong.jpg" alt=Van Quynh Thi Truong" />
-        <h4>Van Quynh Thi Truong</h4>
-        <p class="aff">University of Pennsylvania</p>
-      </div>
-      <div class="org-card">
-        <img src="images/ettore_gran.jpg" alt=Ettore Gran" />
-        <h4>Ettore Gran</h4>
-        <p class="aff">EuroSafeAI</p>
-      </div>
-      <div class="org-card">
-        <img src="images/shawn_shuang.jpg" alt="He (Shawn) Shuang" />
-        <h4>He (Shawn) Shuang</h4>
-        <p class="aff">Palo Alto Networks</p>
-      </div>
-      <div class="org-card">
-        <img src="images/yejin_son.jpg" alt="Yejin Son" />
-        <h4>Yejin Son</h4>
-        <p class="aff">Yonsei University &amp; University of British Columbia</p>
-      </div>
-      <div class="org-card">
-        <img src="images/kexin_li.jpg" alt="Kexin Li" />
-        <h4>Kexin Li</h4>
-        <p class="aff">University of Toronto</p>
-      </div>
-      <div class="org-card">
-        <img src="images/wenjun_qiu.jpg" alt="Wenjun Qiu" />
-        <h4>Wenjun Qiu</h4>
-        <p class="aff">University of Toronto</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ===== Sponsors ===== -->
-<div class="gsites-section bg-light" id="sponsors">
-  <div class="gsites-container">
-    <h2>Sponsors</h2>
-    <div class="organizers-grid">
-      <div class="org-card">
-        <img src="images/schmidt_sciences_logo.jpg" alt="Schmidt Sciences" />
-        <h4><a href="https://www.schmidtsciences.org">Schmidt Sciences</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/cooperative_ai_logo.jpg" alt="Cooperative AI Foundation" />
-        <h4><a href="https://www.cooperativeai.com/">Cooperative AI Foundation</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/iaseai_logo.jpeg" alt="IASEAI" />
-        <h4><a href="https://www.iaseai.org/">International Association for Safe and Ethical AI</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/aim_intelligence_logo.jpeg" alt="AIM Intelligence" />
-        <h4><a href="https://www.aim-intelligence.com">AIM Intelligence</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/coefficient_giving_logo.jpeg" alt="Coefficient Giving" />
-        <h4><a href="https://coefficientgiving.org/">Coefficient Giving</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/bluedot_impact_logo.jpeg" alt="BlueDot Impact" />
-        <h4><a href="https://bluedot.org/">BlueDot Impact</a></h4>
       </div>
     </div>
   </div>
