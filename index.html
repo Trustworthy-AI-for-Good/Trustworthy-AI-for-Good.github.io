@@ -534,7 +534,6 @@
     #organizers.gsites-section {
       padding-top: 36px;
       padding-bottom: 48px;
-      scroll-margin-top: 72px;
     }
     .org-card { text-align: center; }
     #sponsors .organizers-grid {
@@ -640,16 +639,9 @@
 <div class="gsites-hero">
   <p class="hero-overline">Workshop</p>
   <h1>Trustworthy AI for Good @ NeurIPS 2026</h1>
-  <p class="hero-meta">Date &amp; venue: TBA</p>
-  <div class="hero-links">
-    <a href="#dates" class="btn-primary">Key Dates</a>
-    <a href="#topics" class="btn-outline">Call for Papers</a>
-  </div>
+  <p class="hero-meta">Date: TBD &nbsp;|&nbsp; Location: Paris, France</p>
   <div class="hero-links">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSewXggPpBlTptN1NJusMvOhTpms3y0MXJuK7hAOlj52OWUrsA/viewform?usp=send_form" class="btn-primary" target="_blank" rel="noopener">I'd Like to Be a Reviewer: Register Here!</a>
-    <a href="#submission" class="btn-outline">Submission Guidelines</a>
-  </div>
-  <div class="hero-links">
     <a href="icml-2026.html" class="btn-outline">View ICML 2026 Workshop</a>
   </div>
   <p class="hero-note">Sponsors: We're open for sponsorship with PR benefits! Please email <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a> directly!</p>
@@ -767,26 +759,26 @@
 <div class="gsites-section bg-light" id="dates">
   <div class="gsites-container">
     <h2>Important Dates</h2>
-    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted. Exact dates TBA.</p>
+    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted. Exact dates TBD.</p>
     <div class="dates-table">
       <div class="date-row">
-        <div class="date-val">TBA</div>
+        <div class="date-val">TBD</div>
         <div class="date-label">Submission Portal Opens</div>
       </div>
       <div class="date-row">
-        <div class="date-val">TBA</div>
+        <div class="date-val">TBD</div>
         <div class="date-label">Paper Submission Deadline</div>
       </div>
       <div class="date-row">
-        <div class="date-val">TBA</div>
+        <div class="date-val">TBD</div>
         <div class="date-label">Author Notification</div>
       </div>
       <div class="date-row">
-        <div class="date-val">TBA</div>
+        <div class="date-val">TBD</div>
         <div class="date-label">Camera Ready Deadline</div>
       </div>
       <div class="date-row">
-        <div class="date-val">TBA</div>
+        <div class="date-val">TBD</div>
         <div class="date-label">Workshop Date</div>
       </div>
     </div>
@@ -952,6 +944,53 @@
 <div class="gsites-footer">
   AI4GOOD Workshop @ NeurIPS 2026
 </div>
+
+<script>
+(function () {
+  function scrollOrganizers() {
+    var section = document.getElementById('organizers');
+    if (!section) return;
+    var nav = document.querySelector('.gsites-nav');
+    var navH = nav ? nav.offsetHeight : 64;
+    var sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    var sectionHeight = section.offsetHeight;
+    var vh = window.innerHeight;
+    var available = vh - navH;
+    var target;
+    if (sectionHeight <= available) {
+      target = sectionTop - navH;
+    } else {
+      // Keep the full team (incl. faculty bottom row) in view; title may clip
+      target = sectionTop + sectionHeight - vh;
+    }
+    window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('a[href="#organizers"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (history.pushState) {
+        history.pushState(null, '', '#organizers');
+      } else {
+        location.hash = 'organizers';
+      }
+      scrollOrganizers();
+    });
+  });
+
+  function scrollIfHash() {
+    if (location.hash === '#organizers') {
+      requestAnimationFrame(scrollOrganizers);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    scrollIfHash();
+  } else {
+    window.addEventListener('load', scrollIfHash);
+  }
+})();
+</script>
 
 </body>
 </html>
