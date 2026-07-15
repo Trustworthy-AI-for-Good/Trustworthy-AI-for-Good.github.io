@@ -493,47 +493,47 @@
     #organizers .organizers-students {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 16px 24px;
-      margin-top: 12px;
+      gap: 12px 16px;
+      margin-top: 8px;
     }
     #organizers .organizers-students .org-card img,
     #organizers .organizers-students .org-card .initials-circle {
-      width: 100px;
-      height: 100px;
+      width: 92px;
+      height: 92px;
     }
     #organizers .organizers-students .org-card .initials-circle {
-      font-size: 26px;
+      font-size: 24px;
     }
     #organizers .organizers-faculty {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px 32px;
-      margin-top: 24px;
-      padding-top: 24px;
+      gap: 12px 8px;
+      margin-top: 16px;
+      padding-top: 16px;
       border-top: 1px solid #dadce0;
     }
     #organizers .organizers-faculty .org-card {
-      flex: 0 0 calc(33.33% - 22px);
-      max-width: calc(33.33% - 22px);
+      flex: 0 0 calc(20% - 8px);
+      max-width: calc(20% - 8px);
     }
     #organizers .organizers-faculty .org-card img,
     #organizers .organizers-faculty .org-card .initials-circle {
-      width: 120px;
-      height: 120px;
+      width: 100px;
+      height: 100px;
     }
     #organizers .organizers-faculty .org-card .initials-circle {
-      font-size: 32px;
+      font-size: 28px;
     }
     #organizers .organizers-faculty .org-card h4 {
-      font-size: 15px;
+      font-size: 14px;
     }
     #organizers .organizers-faculty .org-card .aff {
-      font-size: 13px;
+      font-size: 12px;
     }
     #organizers.gsites-section {
-      padding-top: 36px;
-      padding-bottom: 48px;
+      padding-top: 28px;
+      padding-bottom: 36px;
     }
     .org-card { text-align: center; }
     #sponsors .organizers-grid {
@@ -949,19 +949,26 @@
 (function () {
   function scrollOrganizers() {
     var section = document.getElementById('organizers');
-    if (!section) return;
+    var students = section && section.querySelector('.organizers-students');
+    var faculty = section && section.querySelector('.organizers-faculty');
+    if (!section || !students || !faculty) return;
+
     var nav = document.querySelector('.gsites-nav');
     var navH = nav ? nav.offsetHeight : 64;
-    var sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
-    var sectionHeight = section.offsetHeight;
+    var pad = 10;
+    var contentTop = students.getBoundingClientRect().top + window.pageYOffset;
+    var contentBottom = faculty.getBoundingClientRect().bottom + window.pageYOffset;
+    var contentHeight = contentBottom - contentTop;
     var vh = window.innerHeight;
-    var available = vh - navH;
+    var available = vh - navH - pad * 2;
     var target;
-    if (sectionHeight <= available) {
-      target = sectionTop - navH;
+
+    if (contentHeight <= available) {
+      // Fit full student + faculty under nav; title may clip above
+      target = contentTop - navH - pad;
     } else {
-      // Keep the full team (incl. faculty bottom row) in view; title may clip
-      target = sectionTop + sectionHeight - vh;
+      // Prefer keeping both ends as visible as possible
+      target = contentTop - navH - pad - (available - contentHeight) / 2;
     }
     window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
   }
@@ -980,7 +987,9 @@
 
   function scrollIfHash() {
     if (location.hash === '#organizers') {
-      requestAnimationFrame(scrollOrganizers);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(scrollOrganizers);
+      });
     }
   }
 
