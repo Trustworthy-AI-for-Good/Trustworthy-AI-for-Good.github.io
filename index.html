@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI4GOOD @ ICML 2026 — Trustworthy AI for Good</title>
+  <title>AI4GOOD @ NeurIPS 2026 | Trustworthy AI for Good</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -36,15 +36,15 @@
       padding: 0 24px;
     }
     .gsites-nav-inner {
-      max-width: 1100px;
+      max-width: 1200px;
       width: 100%;
       margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 16px;
     }
     .gsites-nav-title {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 400;
       color: #3c4043;
       text-decoration: none;
@@ -55,22 +55,54 @@
       list-style: none;
       gap: 0;
       margin-left: auto;
+      flex-shrink: 0;
     }
     .gsites-nav-links li a {
       display: block;
-      padding: 20px 16px;
-      font-size: 14px;
+      padding: 20px 10px;
+      font-size: 13px;
       font-weight: 500;
       color: #3c4043;
       text-decoration: none;
-      letter-spacing: 0.25px;
+      letter-spacing: 0.2px;
       border-bottom: 3px solid transparent;
       transition: border-color 0.2s;
+      white-space: nowrap;
     }
-    .gsites-nav-links li a:hover {
+    .gsites-nav-links li a:hover,
+    .gsites-nav-workshop li a:hover {
       border-bottom-color: #1a73e8;
       color: #1a73e8;
       text-decoration: none;
+    }
+    .gsites-nav-workshop {
+      display: flex;
+      list-style: none;
+      gap: 0;
+      margin-left: 4px;
+      padding-left: 8px;
+      border-left: 1px solid #dadce0;
+      flex-shrink: 0;
+    }
+    .gsites-nav-workshop li a {
+      display: block;
+      padding: 20px 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #3c4043;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s;
+      white-space: nowrap;
+    }
+    .gsites-nav-workshop li a.active {
+      border-bottom-color: #1a73e8;
+      color: #1a73e8;
+    }
+    .gsites-nav-links li a.active {
+      border-bottom-color: #1a73e8;
+      color: #1a73e8;
     }
 
     /* ===== HERO / TITLE BANNER (Google Sites style) ===== */
@@ -176,13 +208,17 @@
       line-height: 1.6;
     }
 
+    html {
+      scroll-padding-top: 80px;
+    }
+
     /* ===== CONTENT SECTIONS (Google Sites style) ===== */
     .gsites-section {
       padding: 48px 24px;
       border-bottom: 1px solid #e0e0e0;
     }
     .gsites-section:last-of-type { border-bottom: none; }
-    .gsites-section[id] { scroll-margin-top: 25px; }
+    .gsites-section[id] { scroll-margin-top: 80px; }
     .gsites-section.bg-light {
       background: #f8f9fa;
     }
@@ -335,6 +371,50 @@
       line-height: 1.45;
     }
 
+    /* ===== AWARDS ===== */
+    .award-track { margin-top: 36px; }
+    .award-track:first-of-type { margin-top: 24px; }
+    .award-track > h3 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #dadce0;
+    }
+    .award-tier { margin-bottom: 24px; }
+    .award-tier-label {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a73e8;
+      margin-bottom: 10px;
+    }
+    .award-paper {
+      padding: 16px 20px;
+      border: 1px solid #dadce0;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+    .award-paper.best {
+      border-left: 3px solid #1a73e8;
+      background: #f8f9fa;
+    }
+    .award-paper-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #202124;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .award-paper-authors {
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.5;
+      margin: 0;
+    }
+
     /* ===== DATES ===== */
     .dates-table { margin-top: 16px; width: 100%; }
     .date-row {
@@ -410,6 +490,52 @@
       gap: 28px;
       margin-top: 24px;
     }
+    #organizers .organizers-students {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 24px;
+      margin-top: 12px;
+    }
+    #organizers .organizers-students .org-card img,
+    #organizers .organizers-students .org-card .initials-circle {
+      width: 100px;
+      height: 100px;
+    }
+    #organizers .organizers-students .org-card .initials-circle {
+      font-size: 26px;
+    }
+    #organizers .organizers-faculty {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px 32px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid #dadce0;
+    }
+    #organizers .organizers-faculty .org-card {
+      flex: 0 0 calc(33.33% - 22px);
+      max-width: calc(33.33% - 22px);
+    }
+    #organizers .organizers-faculty .org-card img,
+    #organizers .organizers-faculty .org-card .initials-circle {
+      width: 120px;
+      height: 120px;
+    }
+    #organizers .organizers-faculty .org-card .initials-circle {
+      font-size: 32px;
+    }
+    #organizers .organizers-faculty .org-card h4 {
+      font-size: 15px;
+    }
+    #organizers .organizers-faculty .org-card .aff {
+      font-size: 13px;
+    }
+    #organizers.gsites-section {
+      padding-top: 36px;
+      padding-bottom: 48px;
+      scroll-margin-top: 72px;
+    }
     .org-card { text-align: center; }
     #sponsors .organizers-grid {
       display: flex;
@@ -462,18 +588,30 @@
       .topics-grid { grid-template-columns: 1fr; }
       .people-grid { gap: 24px; }
       .person-card { flex: 0 0 calc(50% - 12px); }
-      .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+      .organizers-grid,
+      #organizers .organizers-students { grid-template-columns: repeat(2, 1fr); }
+      #organizers .organizers-faculty .org-card {
+        flex: 0 0 calc(50% - 18px);
+        max-width: calc(50% - 18px);
+      }
       #sponsors .organizers-grid { flex-wrap: wrap; }
       #sponsors .org-card { flex: 0 0 calc(33.33% - 11px); }
       .pres-row { flex-direction: column; }
       .date-row { flex-direction: column; gap: 2px; }
       .date-row .date-val { width: auto; }
-      .gsites-nav-links li a { padding: 20px 10px; font-size: 12px; }
+      .gsites-nav-links li a,
+      .gsites-nav-workshop li a { padding: 20px 10px; font-size: 12px; }
     }
     @media (max-width: 480px) {
       .person-card { flex: 0 0 100%; }
-      .organizers-grid { grid-template-columns: repeat(2, 1fr); }
+      .organizers-grid,
+      #organizers .organizers-students { grid-template-columns: repeat(2, 1fr); }
+      #organizers .organizers-faculty .org-card {
+        flex: 0 0 100%;
+        max-width: 280px;
+      }
       .gsites-nav-links { display: none; }
+      .gsites-nav-workshop { border-left: none; margin-left: 0; padding-left: 0; }
     }
   </style>
 </head>
@@ -482,7 +620,11 @@
 <!-- ===== NAV ===== -->
 <nav class="gsites-nav">
   <div class="gsites-nav-inner">
-    <a href="#" class="gsites-nav-title">Trustworthy AI4GOOD</a>
+    <a href="index.html" class="gsites-nav-title">Trustworthy AI4GOOD</a>
+    <ul class="gsites-nav-workshop">
+      <li><a href="index.html" class="active">NeurIPS 2026</a></li>
+      <li><a href="icml-2026.html">ICML 2026</a></li>
+    </ul>
     <ul class="gsites-nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#topics">Call for Papers</a></li>
@@ -496,308 +638,21 @@
 
 <!-- ===== HERO ===== -->
 <div class="gsites-hero">
-  <h1>Trustworthy AI for Good @ICML2026</h1>
-  <p class="hero-meta" style="font-size: 30px; margin-top: -8px;">July 10 &middot; <strong>GRAND BALLROOM 103 (past registration area) </strong></p>
-  <p class="hero-note" style="font-size: 16px; margin-top: -20px; margin-bottom: 32px; opacity: 0.85;">Everyone is welcome to present at both poster sessions (or either one of them).</p>
+  <p class="hero-overline">Workshop</p>
+  <h1>Trustworthy AI for Good @ NeurIPS 2026</h1>
+  <p class="hero-meta">Date &amp; venue: TBA</p>
   <div class="hero-links">
-    <a href="https://openreview.net/group?id=ICML.cc/2026/Workshop/AI4GOOD" class="btn-primary">Submit a Paper</a>
-    <a href="#dates" class="btn-outline">Key Dates</a>
+    <a href="#dates" class="btn-primary">Key Dates</a>
+    <a href="#topics" class="btn-outline">Call for Papers</a>
   </div>
   <div class="hero-links">
-    <a href="https://forms.gle/7cXvUJCW1FdEghi6A" class="btn-primary" target="_blank">I'd Like to Be a Reviewer: Register Here!</a>
-    <a href="#submission" class="btn-outline">I'd Like to Be an Author: Q&A Here!</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSewXggPpBlTptN1NJusMvOhTpms3y0MXJuK7hAOlj52OWUrsA/viewform?usp=send_form" class="btn-primary" target="_blank" rel="noopener">I'd Like to Be a Reviewer: Register Here!</a>
+    <a href="#submission" class="btn-outline">Submission Guidelines</a>
   </div>
-  <!-- <p class="hero-note">Reviewers: Please don't send Email application! All you need to do is fill in the form above! We will have several <strong>Top Reviewer</strong> awards!</p> -->
-  <!-- <p class="hero-note">Authors: Instead of asking scope questions, we encourage you to just submit to multiple workshops that might be a good fit! We have <strong>Top Paper</strong> awards for both cooperative AI and general track!</a>.</p> -->
-  <p class="hero-note">Sponsors: We're open for sponsorship with PR benefits! Please email <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a> directly! </p>
-</div>
-
-<!-- ===== SCHEDULE ===== -->
-<div class="gsites-section bg-light" id="schedule">
-  <div class="gsites-container">
-    <h2>Workshop Schedule</h2>
-    <p>July 10 &middot; All times are in Seoul local time (KST).</p>
-    <div class="dates-table">
-      <div class="date-row">
-        <div class="date-val">08:00&ndash;08:15</div>
-        <div class="date-label">Opening Remarks</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">08:15&ndash;09:15</div>
-        <div class="date-label">
-          Oral Session I
-          <div class="oral-paper-list">
-            <span class="oral-paper-title">1. Norm Enforcement for AI Agents: Robustly Shaping Behavior in Multi-Agent Systems</span><br />
-            <span class="oral-paper-title">2. CoopEval: Benchmarking Cooperation-Sustaining Mechanisms and LLM Agents in Social Dilemmas</span><br />
-            <span class="oral-paper-title">3. The Best-Laid SCHEMEs: Coordinated Sabotage and Monitoring in Multi-Agent Systems</span><br />
-            <span class="oral-paper-title">4. RLSpoofer: A Sample-Efficient Black-Box Spoofing Attack for Stress-Testing LLM Watermarks</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">09:15&ndash;09:40</div>
-        <div class="date-label">Joel Leibo &mdash; Keynote</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">09:40&ndash;10:00</div>
-        <div class="date-label">Coffee Break</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">10:00&ndash;11:00</div>
-        <div class="date-label">Panel Discussion &mdash; <strong>Zhijing Jin (Moderator)</strong>, Milind Tambe, Lewis Hammond, Gopal Sarma, Adam Gleave</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">11:00&ndash;11:25</div>
-        <div class="date-label">Oana Ignat &mdash; Keynote</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">11:25&ndash;13:00</div>
-        <div class="date-label">Poster Session A + Lunch Break</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">13:00&ndash;13:30</div>
-        <div class="date-label">Naman Goyal + Jenny Ni &mdash; Keynote</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">13:30&ndash;14:45</div>
-        <div class="date-label">
-          Oral Session II
-          <div class="oral-paper-list">
-            <span class="oral-paper-title">1. BarrierSteer: LLM Safety via Learning Barrier Steering</span><br />
-            <span class="oral-paper-title">2. Three Years of r/ChatGPT: Societal Impact Evaluations from Social Media Data</span><br />
-            <span class="oral-paper-title">3. Do Thinking Tokens Help with Safety?</span><br />
-            <span class="oral-paper-title">4. Towards Predictive Models of Strategic Behaviour in Large Language Model Agents</span><br />
-            <span class="oral-paper-title">5. Unsafer in Many Turns: Benchmarking and Defending Multi-Turn Safety Risks in Tool-Using Agents</span>
-          </div>
-        </div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">14:45&ndash;14:55</div>
-        <div class="date-label">Awards</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">14:55&ndash;15:20</div>
-        <div class="date-label">Maksym Andriushchenko &mdash; Keynote</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">15:30&ndash;15:55</div>
-        <div class="date-label">Yoshua Bengio &mdash; Keynote</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">15:55&ndash;16:20</div>
-        <div class="date-label">Closing Remarks</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">16:20&ndash;17:00</div>
-        <div class="date-label">Poster Session B</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">17:00</div>
-        <div class="date-label">End</div>
-      </div>
-    </div>
+  <div class="hero-links">
+    <a href="icml-2026.html" class="btn-outline">View ICML 2026 Workshop</a>
   </div>
-</div>
-
-<!-- ===== SPEAKERS ===== -->
-<div class="gsites-section bg-light" id="speakers">
-  <div class="gsites-container">
-    <h2>Confirmed Speakers</h2>
-    <div class="people-grid">
-      <div class="person-card">
-        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
-        <h4><a href="https://yoshuabengio.org/">Yoshua Bengio</a></h4>
-        <p class="aff">University of Montreal &amp; Mila &amp; LawZero (Virtual)</p>
-      </div>
-      <div class="person-card">
-        <img src="images/oana_ignat.jpg" alt="Oana Ignat" />
-        <h4><a href="https://oanaignat.github.io/">Oana Ignat</a></h4>
-        <p class="aff">Santa Clara University</p>
-      </div>
-      <div class="person-card">
-        <img src="images/joel_leibo.jpg" alt="Joel Leibo" />
-        <h4><a href="https://www.jzleibo.com/">Joel Leibo</a></h4>
-        <p class="aff">Google DeepMind</p>
-      </div>
-      <div class="person-card">
-        <img src="images/maksym_andriushchenko.jpg" alt="Maksym Andriushchenko" />
-        <h4><a href="https://andriushchenko.me/">Maksym Andriushchenko</a></h4>
-        <p class="aff">ELLIS T&uuml;bingen &amp; MPI-IS</p>
-      </div>
-      <div class="person-card">
-        <img src="images/jenny_ni.jpg" alt="Jenny Ni" />
-        <h4><a href="https://www.linkedin.com/in/jennyni/">Jenny Ni</a></h4>
-        <p class="aff">Google</p>
-      </div>
-      <div class="person-card">
-        <img src="images/naman_goyal.jpeg" alt="Naman Goyal" />
-        <h4><a href="https://namangoyal.com/">Naman Goyal</a></h4>
-        <p class="aff">Google DeepMind</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== PANELISTS ===== -->
-<div class="gsites-section" id="panelists">
-  <div class="gsites-container">
-    <h2>Confirmed Panelists</h2>
-    <div class="people-grid">
-      <div class="person-card">
-        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
-        <h4><a href="https://teamcore.seas.harvard.edu/tambe/">Milind Tambe</a></h4>
-        <p class="aff">Harvard University</p>
-      </div>
-      <div class="person-card">
-        <img src="images/lewis_hammond.jpg" alt="Lewis Hammond" />
-        <h4><a href="https://lewishammond.com/">Lewis Hammond</a></h4>
-        <p class="aff">Cooperative AI Foundation &amp; University of Oxford</p>
-      </div>
-      <div class="person-card">
-        <img src="images/gopal_sarma.jpg" alt="Gopal Sarma" />
-        <h4><a href="https://www.gopalsarma.com/">Gopal Sarma</a></h4>
-        <p class="aff">RAND Corporation</p>
-      </div>
-      <div class="person-card">
-        <img src="images/adam_gleave.jpg" alt="Adam Gleave" />
-        <h4><a href="https://www.gleave.me/">Adam Gleave</a></h4>
-        <p class="aff">FAR.AI</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== TRAVEL SUPPORT =====
-<div class="gsites-section">
-  <div class="gsites-container">
-    <h2>Travel Support</h2>
-    <p>
-      <a href="https://www.schmidtsciences.org/">Schmidt Sciences</a> will provide funding to support scholars from under-represented and under-served communities to attend the workshop. Details on how to apply will be posted on the workshop website.
-    </p>
-  </div>
-</div>
-   -->
-
-<!-- ===== ORGANIZERS ===== -->
-<div class="gsites-section bg-light" id="organizers">
-  <div class="gsites-container">
-    <h2>Organizing Team</h2>
-    <div class="organizers-grid">
-      <div class="org-card">
-        <img src="images/terry_zhang.jpg" alt="Terry Zhang" />
-        <h4>Terry Jingchen Zhang</h4>
-        <p class="aff">University of Oxford &amp; Vector Institute</p>
-      </div>
-      <div class="org-card">
-        <img src="images/zhijing_jin.png" alt="Zhijing Jin" />
-        <h4>Zhijing Jin</h4>
-        <p class="aff">University of Toronto</p>
-      </div>
-      <div class="org-card">
-        <img src="images/rada_mihalcea.jpg" alt="Rada Mihalcea" />
-        <h4>Rada Mihalcea</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
-        <h4>Milind Tambe</h4>
-        <p class="aff">Harvard University</p>
-      </div>
-      <div class="org-card">
-        <img src="images/david_lie.jpg" alt="David Lie" />
-        <h4>David Lie</h4>
-        <p class="aff">University of Toronto &amp; Schwartz Reisman Institute</p>
-      </div>
-      <div class="org-card">
-        <img src="images/joan_nwatu.jpg" alt="Joan Nwatu" />
-        <h4>Joan Nwatu</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/david_guzman.png" alt="David Guzman Piedrahita" />
-        <h4>David Guzman Piedrahita</h4>
-        <p class="aff">ETH Z&uuml;rich &amp; University of Z&uuml;rich</p>
-      </div>
-      <div class="org-card">
-        <img src="images/changling_li.jpg" alt=Changling Li" />
-        <h4>Changling Li</h4>
-        <p class="aff">ETH Z&uuml;rich &amp; MPI-IS</p>
-      </div>
-      <div class="org-card">
-        <img src="images/jerick_shi.jpg" alt=Jerick Shi" />
-        <h4>Jerick Shi</h4>
-        <p class="aff">Carnegie Mellon University</p>
-      </div>
-      <div class="org-card">
-        <img src="images/prakhar_gupta.jpg" alt=Prakhar Gupta" />
-        <h4>Prakhar Gupta</h4>
-        <p class="aff">University of Michigan</p>
-      </div>
-      <div class="org-card">
-        <img src="images/van_truong.jpg" alt=Van Quynh Thi Truong" />
-        <h4>Van Quynh Thi Truong</h4>
-        <p class="aff">University of Pennsylvania</p>
-      </div>
-      <div class="org-card">
-        <img src="images/ettore_gran.jpg" alt=Ettore Gran" />
-        <h4>Ettore Gran</h4>
-        <p class="aff">EuroSafeAI</p>
-      </div>
-      <div class="org-card">
-        <img src="images/shawn_shuang.jpg" alt="He (Shawn) Shuang" />
-        <h4>He (Shawn) Shuang</h4>
-        <p class="aff">Palo Alto Networks</p>
-      </div>
-      <div class="org-card">
-        <img src="images/yejin_son.jpg" alt="Yejin Son" />
-        <h4>Yejin Son</h4>
-        <p class="aff">Yonsei University &amp; University of British Columbia</p>
-      </div>
-      <div class="org-card">
-        <img src="images/kexin_li.jpg" alt="Kexin Li" />
-        <h4>Kexin Li</h4>
-        <p class="aff">University of Toronto &amp; Schwartz Reisman Graduate Fellow</p>
-      </div>
-      <div class="org-card">
-        <img src="images/wenjun_qiu.jpg" alt="Wenjun Qiu" />
-        <h4>Wenjun Qiu</h4>
-        <p class="aff">University of Toronto &amp; Schwartz Reisman Graduate Fellow</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Sponsors ===== -->
-<div class="gsites-section bg-light" id="sponsors">
-  <div class="gsites-container">
-    <h2>Sponsors</h2>
-    <div class="organizers-grid">
-      <div class="org-card">
-        <img src="images/schmidt_sciences_logo.jpg" alt="Schmidt Sciences" />
-        <h4><a href="https://www.schmidtsciences.org">Schmidt Sciences</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/cooperative_ai_logo.jpg" alt="Cooperative AI Foundation" />
-        <h4><a href="https://www.cooperativeai.com/">Cooperative AI Foundation</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/aim_intelligence_logo.jpeg" alt="AIM Intelligence" />
-        <h4><a href="https://www.aim-intelligence.com">AIM Intelligence</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/coefficient_giving_logo.jpeg" alt="Coefficient Giving" />
-        <h4><a href="https://coefficientgiving.org/">Coefficient Giving</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/bluedot_impact_logo.jpeg" alt="BlueDot Impact" />
-        <h4><a href="https://bluedot.org/">BlueDot Impact</a></h4>
-      </div>
-      <div class="org-card">
-        <img src="images/iaseai_logo.jpeg" alt="IASEAI" />
-        <h4><a href="https://www.iaseai.org/">International Association for Safe and Ethical AI</a></h4>
-      </div>
-    </div>
-  </div>
+  <p class="hero-note">Sponsors: We're open for sponsorship with PR benefits! Please email <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a> directly!</p>
 </div>
 
 <!-- ===== OVERVIEW ===== -->
@@ -869,7 +724,7 @@
     <h3>Prizes &amp; Awards</h3>
     <div class="topics-grid">
       <div class="topic-card">
-        <h3>Top Paper Prize &mdash; Cooperative AI</h3>
+        <h3>Top Paper Prize: Cooperative AI</h3>
         <p>Awarded to the best paper in the Cooperative AI special theme. Sponsored by the <a href="https://www.cooperativeai.com/">Cooperative AI Foundation (CAIF)</a>.</p>
       </div>
       <div class="topic-card">
@@ -877,11 +732,11 @@
         <p>Recognition with incentives for the most thorough and constructive reviewers.</p>
       </div>
       <div class="topic-card">
-        <h3>Travel Support &mdash; Cooperative AI</h3>
+        <h3>Travel Support: Cooperative AI</h3>
         <p>Travel support for authors with accepted papers on the Cooperative AI theme. Sponsored by <a href="https://www.cooperativeai.com/">CAIF</a>.</p>
       </div>
       <div class="topic-card">
-        <h3>Travel Support &mdash; General</h3>
+        <h3>Travel Support: General</h3>
         <p>Travel funding for under-represented groups.</p>
       </div>
     </div>
@@ -895,7 +750,7 @@
     <h2>Submission Guidelines</h2>
     <div class="submission-item">
       <span class="check-icon">&#10003;</span>
-      <p><strong>Format:</strong> Papers should be 2&ndash;8 pages (excluding references and appendices) using the <a href="https://icml.cc/Conferences/2026/AuthorInstructions">ICML 2026 style</a>.</p>
+      <p><strong>Format:</strong> Papers should be 2 to 8 pages (excluding references and appendices) using the NeurIPS 2026 workshop style (details TBA).</p>
     </div>
     <div class="submission-item">
       <span class="check-icon">&#10003;</span>
@@ -905,73 +760,168 @@
       <span class="check-icon">&#10003;</span>
       <p><strong>Non-Archival:</strong> Work may be submitted to or published at other venues.</p>
     </div>
-
-<!-- we particularly encourage hidden for now
-    <h3>We Particularly Encourage</h3>
-    <ul class="encourage-list">
-      <li>Work bridging technical AI safety research with real-world applications</li>
-      <li>Interdisciplinary collaborations (e.g., with social science, law, policy, journalism)</li>
-      <li>Deployment experiences, including lessons from failures</li>
-      <li>Novel evaluation frameworks for measuring AI's societal impact</li>
-      <li>Perspectives from underrepresented communities and the Global South</li>
-    </ul>
-    -->
   </div>
 </div>
-
-<!-- ===== PRESENTATION & AWARDS (hidden for now) =====
-<div class="gsites-section bg-light">
-  <div class="gsites-container">
-    <h2>Presentation &amp; Awards</h2>
-    <p>Accepted papers will be selected for one of the following:</p>
-    <div class="pres-row">
-      <div class="pres-box">
-        <h4>Contributed Oral Talk</h4>
-        <p>20 minutes &mdash; up to 6 papers selected</p>
-      </div>
-      <div class="pres-box">
-        <h4>Poster Presentation</h4>
-        <p>Across two poster sessions (morning and afternoon)</p>
-      </div>
-    </div>
-  </div>
-</div>
-===== END PRESENTATION & AWARDS ===== -->
 
 <!-- ===== DATES ===== -->
-<div class="gsites-section" id="dates">
+<div class="gsites-section bg-light" id="dates">
   <div class="gsites-container">
     <h2>Important Dates</h2>
-    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong>.</p>
+    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted. Exact dates TBA.</p>
     <div class="dates-table">
       <div class="date-row">
-        <div class="date-val">March 21, 2026</div>
+        <div class="date-val">TBA</div>
         <div class="date-label">Submission Portal Opens</div>
       </div>
       <div class="date-row">
-        <div class="date-val">May 7-9, 2026</div>
-        <div class="date-label">EXTENDED submission deadline: Submit abstract by May 7 AOE and full paper by May 9 AOE (Abstract deadline policy same as NeurIPS) </div>
+        <div class="date-val">TBA</div>
+        <div class="date-label">Paper Submission Deadline</div>
       </div>
       <div class="date-row">
-        <div class="date-val">June 1, 2026</div>
-        <div class="date-label">Author Notification: Please apply to financial aid (from ICML and other sources) regardless of result notification! Workshop acceptance is very unlikely to make a difference.</div>
+        <div class="date-val">TBA</div>
+        <div class="date-label">Author Notification</div>
       </div>
       <div class="date-row">
-        <div class="date-val">June 11, 2026</div>
-        <div class="date-label">Oral Notification</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">July 1, 2026</div>
+        <div class="date-val">TBA</div>
         <div class="date-label">Camera Ready Deadline</div>
       </div>
       <div class="date-row">
-        <div class="date-val">July 10</div>
+        <div class="date-val">TBA</div>
         <div class="date-label">Workshop Date</div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ===== SPEAKERS ===== -->
+<div class="gsites-section" id="speakers">
+  <div class="gsites-container">
+    <h2>Speakers</h2>
+    <p>Confirmed speakers will be announced soon.</p>
+  </div>
+</div>
+
+<!-- ===== SCHEDULE ===== -->
+<div class="gsites-section bg-light" id="schedule">
+  <div class="gsites-container">
+    <h2>Workshop Schedule</h2>
+    <p>The detailed schedule will be posted closer to the workshop date.</p>
+  </div>
+</div>
+
+<!-- ===== ORGANIZERS ===== -->
+<div class="gsites-section bg-light" id="organizers">
+  <div class="gsites-container">
+    <h2>Organizing Team</h2>
+    <div class="organizers-students">
+      <div class="org-card">
+        <img src="images/terry_zhang.jpg" alt="Terry Jingchen Zhang" />
+        <h4><a href="https://terry-zhang.notion.site/" target="_blank" rel="noopener">Terry Jingchen Zhang</a></h4>
+        <p class="aff">University of Oxford &amp; Vector Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/arian_khorasani.png" alt="Arian Khorasani" />
+        <h4><a href="https://sites.google.com/view/ariankhorasani/home" target="_blank" rel="noopener">Arian Khorasani</a></h4>
+        <p class="aff">University of Montreal &amp; Mila-Quebec AI Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/joan_nwatu.jpg" alt="Joan Nwatu" />
+        <h4><a href="https://anniejoan.github.io/" target="_blank" rel="noopener">Joan Nwatu</a></h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/yejin_son.jpg" alt="Yejin Son" />
+        <h4><a href="https://ozzaney.github.io/" target="_blank" rel="noopener">Yejin Son</a></h4>
+        <p class="aff">University of British Columbia &amp; Vector Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/shawn_shuang.jpg" alt="He (Shawn) Shuang" />
+        <h4><a href="https://8759s.github.io/" target="_blank" rel="noopener">He (Shawn) Shuang</a></h4>
+        <p class="aff">Palo Alto Networks</p>
+      </div>
+      <div class="org-card">
+        <img src="images/jerick_shi.jpg" alt="Jerick Shi" />
+        <h4><a href="https://jerick-1380.github.io/" target="_blank" rel="noopener">Jerick Shi</a></h4>
+        <p class="aff">Carnegie Mellon University</p>
+      </div>
+      <div class="org-card">
+        <img src="images/prakhar_gupta.jpg" alt="Prakhar Gupta" />
+        <h4><a href="https://www.linkedin.com/in/prakhar55/" target="_blank" rel="noopener">Prakhar Gupta</a></h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/kexin_li.jpg" alt="Kexin Li" />
+        <h4><a href="https://www.cassiekexinli.com/index.html" target="_blank" rel="noopener">Kexin Li</a></h4>
+        <p class="aff">University of Toronto &amp; Schwartz Reisman Graduate Fellow</p>
+      </div>
+      <div class="org-card">
+        <img src="images/wenjun_qiu.jpg" alt="Wenjun Qiu" />
+        <h4><a href="http://individual.utoronto.ca/wenjunqiu/" target="_blank" rel="noopener">Wenjun Qiu</a></h4>
+        <p class="aff">University of Toronto &amp; Schwartz Reisman Graduate Fellow</p>
+      </div>
+    </div>
+    <div class="organizers-faculty">
+      <div class="org-card">
+        <img src="images/zhijing_jin.png" alt="Zhijing Jin" />
+        <h4><a href="https://zhijing-jin.com/home/" target="_blank" rel="noopener">Zhijing Jin</a></h4>
+        <p class="aff">University of Toronto</p>
+      </div>
+      <div class="org-card">
+        <img src="images/rada_mihalcea.jpg" alt="Rada Mihalcea" />
+        <h4><a href="https://web.eecs.umich.edu/~mihalcea/" target="_blank" rel="noopener">Rada Mihalcea</a></h4>
+        <p class="aff">University of Michigan</p>
+      </div>
+      <div class="org-card">
+        <img src="images/milind_tambe.jpg" alt="Milind Tambe" />
+        <h4><a href="https://teamcore.seas.harvard.edu/tambe" target="_blank" rel="noopener">Milind Tambe</a></h4>
+        <p class="aff">Harvard University</p>
+      </div>
+      <div class="org-card">
+        <img src="images/david_lie.jpg" alt="David Lie" />
+        <h4><a href="https://security.csl.toronto.edu/" target="_blank" rel="noopener">David Lie</a></h4>
+        <p class="aff">University of Toronto &amp; Schwartz Reisman Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/christian_schroeder_de_witt.png" alt="Christian Schroeder de Witt" />
+        <h4><a href="https://wittlab.ai/author/christian-schroeder-de-witt/" target="_blank" rel="noopener">Christian Schroeder de Witt</a></h4>
+        <p class="aff">University of Oxford</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Sponsors ===== -->
+<div class="gsites-section bg-light" id="sponsors">
+  <div class="gsites-container">
+    <h2>Sponsors</h2>
+    <div class="organizers-grid">
+      <div class="org-card">
+        <img src="images/schmidt_sciences_logo.jpg" alt="Schmidt Sciences" />
+        <h4><a href="https://www.schmidtsciences.org">Schmidt Sciences</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/cooperative_ai_logo.jpg" alt="Cooperative AI Foundation" />
+        <h4><a href="https://www.cooperativeai.com/">Cooperative AI Foundation</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/aim_intelligence_logo.jpeg" alt="AIM Intelligence" />
+        <h4><a href="https://www.aim-intelligence.com">AIM Intelligence</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/coefficient_giving_logo.jpeg" alt="Coefficient Giving" />
+        <h4><a href="https://coefficientgiving.org/">Coefficient Giving</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/bluedot_impact_logo.jpeg" alt="BlueDot Impact" />
+        <h4><a href="https://bluedot.org/">BlueDot Impact</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/iaseai_logo.jpeg" alt="IASEAI" />
+        <h4><a href="https://www.iaseai.org/">International Association for Safe and Ethical AI</a></h4>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== FAQ ===== -->
 <div class="gsites-section" id="author-faq">
@@ -980,303 +930,27 @@
     <div class="faq-section">
       <div class="faq-item">
         <h4>I'm not sure if my paper is in scope</h4>
-        <p>We encourage you to submit anyway! It is possible that we may have to desk-reject some papers that we believe might be a better fit for other venues. This will not be made public, so don't worry&mdash;it does not represent any judgment of your work, just an administrative necessity as our review capacity is limited.</p>
+        <p>We encourage you to submit anyway! It is possible that we may have to desk-reject some papers that we believe might be a better fit for other venues. This will not be made public, so don't worry: it does not represent any judgment of your work, just an administrative necessity as our review capacity is limited.</p>
       </div>
       <div class="faq-item">
-        <h4>Can I submit a paper that is under review at ICML or another conference/journal?</h4>
-        <p>On our side, we are open to any submissions currently under review (at ICML or other venues). However, it is your responsibility to make sure that the other venue is OK with your submission to our workshop. For example, CVPR considers peer-reviewed workshop contributions with more than 4 pages as published, even if the workshop is non-archival (which we are). Similarly, there are some case-by-case rules for journals, where you may want to check with the editors.</p>
+        <h4>Can I submit a paper that is under review at NeurIPS or another conference/journal?</h4>
+        <p>On our side, we are open to any submissions currently under review (at NeurIPS or other venues). However, it is your responsibility to make sure that the other venue is OK with your submission to our workshop.</p>
       </div>
       <div class="faq-item">
-        <h4>Can I submit to another ICML workshop as well?</h4>
+        <h4>Can I submit to another NeurIPS workshop as well?</h4>
         <p>We are also open to that from our side, especially if you feel like your work spans the interest of several workshops. Similarly, you may want to check the website of other workshops to make sure they are OK with it as well.</p>
       </div>
       <div class="faq-item">
         <h4>Do I need to attend in person?</h4>
-        <p>We are very flexible with presenters and plan to accommodate a hybrid modality. That said, we strongly encourage in-person presence, and all contributed talks (i.e., oral papers) are required to be presented in person.</p>
+        <p>Details on presentation modality will be announced closer to the workshop date. We strongly encourage in-person presence when possible.</p>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== CONTACT ===== -->
-<div class="gsites-section">
-  <div class="gsites-container">
-    <h2>Contact</h2>
-    <p>
-      For questions and sponsorship, feel free to contact us at <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a>.
-    </p>
-  </div>
-</div>
-
-
-<!-- ===== REVIEWER ACKNOWLEDGMENTS ===== -->
-<div class="gsites-section bg-light" id="reviewers">
-  <div class="gsites-container">
-    <h2>Thank You to Our Reviewers</h2>
-    <p>
-      Our workshop would not be possible without the dedication of our reviewers. We are deeply grateful
-      to the following 237 reviewers who generously volunteered their time and expertise to provide
-      thoughtful, constructive feedback. Thank you for your service to the community.
-    </p>
-    <style>
-      #reviewers .reviewers-list {
-        column-width: 200px;
-        column-gap: 28px;
-        margin-top: 24px;
-      }
-      #reviewers .reviewer-name {
-        font-size: 14px;
-        color: #3c4043;
-        padding: 5px 0;
-        break-inside: avoid;
-        -webkit-column-break-inside: avoid;
-      }
-    </style>
-    <div class="reviewers-list">
-        <div class="reviewer-name">Zeyu Wang</div>
-        <div class="reviewer-name">Mohammadmojtaba Roshani</div>
-        <div class="reviewer-name">Ruiyu Li</div>
-        <div class="reviewer-name">Samvid Avinash Zare</div>
-        <div class="reviewer-name">Prajwal Sanjay Pisal</div>
-        <div class="reviewer-name">Kexin Li</div>
-        <div class="reviewer-name">Ruchika Gupta</div>
-        <div class="reviewer-name">Kunyang Li</div>
-        <div class="reviewer-name">Doehyeon Lee</div>
-        <div class="reviewer-name">Diganta Misra</div>
-        <div class="reviewer-name">Roki Seydi</div>
-        <div class="reviewer-name">Saurabh Yergattikar</div>
-        <div class="reviewer-name">Rahul D Ray</div>
-        <div class="reviewer-name">Pratinav Seth</div>
-        <div class="reviewer-name">Eti Rastogi</div>
-        <div class="reviewer-name">Nataša Krčo</div>
-        <div class="reviewer-name">Poli Nemkova</div>
-        <div class="reviewer-name">Vedant Palit</div>
-        <div class="reviewer-name">Yuchen Zhang</div>
-        <div class="reviewer-name">Toluwani Aremu</div>
-        <div class="reviewer-name">Punitha Ponnuraj</div>
-        <div class="reviewer-name">Arth Singh</div>
-        <div class="reviewer-name">Dan Vilenchik</div>
-        <div class="reviewer-name">Aakash Sen Sharma</div>
-        <div class="reviewer-name">Shawn He Shuang</div>
-        <div class="reviewer-name">Naman Goyal</div>
-        <div class="reviewer-name">Ashim Dhor</div>
-        <div class="reviewer-name">Yash Ganpat Sawant</div>
-        <div class="reviewer-name">Amit Dhanda</div>
-        <div class="reviewer-name">Anita Srinivasan</div>
-        <div class="reviewer-name">Xuelin Zhang</div>
-        <div class="reviewer-name">Saemi Moon</div>
-        <div class="reviewer-name">Changling Li</div>
-        <div class="reviewer-name">Falaah Arif Khan</div>
-        <div class="reviewer-name">Rasika Muralidharan</div>
-        <div class="reviewer-name">Mohamed Rayan Barhdadi</div>
-        <div class="reviewer-name">Adeel Yousaf</div>
-        <div class="reviewer-name">Zhenze Mo</div>
-        <div class="reviewer-name">Mateo Dulce Rubio</div>
-        <div class="reviewer-name">Vishal Ishwar Naik</div>
-        <div class="reviewer-name">Marisa Ferrara Boston</div>
-        <div class="reviewer-name">Alejandro Salinas de Leon</div>
-        <div class="reviewer-name">David Gros</div>
-        <div class="reviewer-name">Jerick Shi</div>
-        <div class="reviewer-name">Shubin Kim</div>
-        <div class="reviewer-name">Minki Hong</div>
-        <div class="reviewer-name">Sourav Panda</div>
-        <div class="reviewer-name">Luis Ibanez-Lissen</div>
-        <div class="reviewer-name">Arian Khorasani</div>
-        <div class="reviewer-name">Dane Malenfant</div>
-        <div class="reviewer-name">Srishti Srivastava</div>
-        <div class="reviewer-name">Hyeonjeong Koo</div>
-        <div class="reviewer-name">Tahmid Imtiaz Imu</div>
-        <div class="reviewer-name">Jennifer Zhang</div>
-        <div class="reviewer-name">Ishwar B Balappanawar</div>
-        <div class="reviewer-name">Haichang Li</div>
-        <div class="reviewer-name">Muhammad Zaid Hassan</div>
-        <div class="reviewer-name">Apoorva Jaiswal</div>
-        <div class="reviewer-name">Shubham Shukla</div>
-        <div class="reviewer-name">Eric Liu</div>
-        <div class="reviewer-name">Wenjun Qiu</div>
-        <div class="reviewer-name">Mohammad Arif Hossain</div>
-        <div class="reviewer-name">Taehyung Kim</div>
-        <div class="reviewer-name">Bingying Liu</div>
-        <div class="reviewer-name">Sahil Rajesh Dhayalkar</div>
-        <div class="reviewer-name">Tai Vu</div>
-        <div class="reviewer-name">Syed Ali Haider</div>
-        <div class="reviewer-name">Shutong Fan</div>
-        <div class="reviewer-name">Zixu Zhou</div>
-        <div class="reviewer-name">Akhil Eppa</div>
-        <div class="reviewer-name">Kyan Mahajan</div>
-        <div class="reviewer-name">Keyu Zhu</div>
-        <div class="reviewer-name">Arun Narayanan</div>
-        <div class="reviewer-name">Preetika Verma</div>
-        <div class="reviewer-name">Tirtho Roy</div>
-        <div class="reviewer-name">Sujoy Nath</div>
-        <div class="reviewer-name">Maisha Binte Rashid</div>
-        <div class="reviewer-name">Muhammad Yusuf Hassan</div>
-        <div class="reviewer-name">Nathan Truong</div>
-        <div class="reviewer-name">Zhaoqian Yao</div>
-        <div class="reviewer-name">Siqin Li</div>
-        <div class="reviewer-name">Sonal Khosla</div>
-        <div class="reviewer-name">Ryan Marinelli</div>
-        <div class="reviewer-name">Zhihua Liu</div>
-        <div class="reviewer-name">Oscar S. Yasunaga</div>
-        <div class="reviewer-name">Aniruddha Ghosal</div>
-        <div class="reviewer-name">Parth Mehta</div>
-        <div class="reviewer-name">Yingshuo Wang</div>
-        <div class="reviewer-name">Haritz Puerto</div>
-        <div class="reviewer-name">Ratna Kandala</div>
-        <div class="reviewer-name">Chimaobi Okite</div>
-        <div class="reviewer-name">Dipesh Tharu Mahato</div>
-        <div class="reviewer-name">Joan Nwatu</div>
-        <div class="reviewer-name">Han Yan</div>
-        <div class="reviewer-name">Danial Amin</div>
-        <div class="reviewer-name">Chijioke Ugwuanyi</div>
-        <div class="reviewer-name">Joyce Gill</div>
-        <div class="reviewer-name">Sanika Chavan</div>
-        <div class="reviewer-name">Jeremy Qin</div>
-        <div class="reviewer-name">Nina da Hora</div>
-        <div class="reviewer-name">Jungwhan Kim</div>
-        <div class="reviewer-name">Chengxiao Dai</div>
-        <div class="reviewer-name">Divyanshu Goyal</div>
-        <div class="reviewer-name">Karukriti Kaushik Ghosh</div>
-        <div class="reviewer-name">Soumyadeep Nag</div>
-        <div class="reviewer-name">Nazia Riasat</div>
-        <div class="reviewer-name">Rakshith Srinivasa Murthy</div>
-        <div class="reviewer-name">Brijesh Vora</div>
-        <div class="reviewer-name">Dhanush Gopal Battina</div>
-        <div class="reviewer-name">Mehul Agarwal</div>
-        <div class="reviewer-name">Van Q. Truong</div>
-        <div class="reviewer-name">Shashwat Saxena</div>
-        <div class="reviewer-name">Advait Yadav</div>
-        <div class="reviewer-name">Rohan Poudel</div>
-        <div class="reviewer-name">Ashwin Aravind</div>
-        <div class="reviewer-name">Ayush Nangia</div>
-        <div class="reviewer-name">Ninaad Rao</div>
-        <div class="reviewer-name">Divya Bhargavi</div>
-        <div class="reviewer-name">Prodipta Sen Amartya</div>
-        <div class="reviewer-name">Aryan Gulati</div>
-        <div class="reviewer-name">Jimin Yeom</div>
-        <div class="reviewer-name">Azmine Toushik Wasi</div>
-        <div class="reviewer-name">Ranabir Devgupta</div>
-        <div class="reviewer-name">Trishita Dhara</div>
-        <div class="reviewer-name">Yanlin Li</div>
-        <div class="reviewer-name">Anna Neumann</div>
-        <div class="reviewer-name">JuliaISU</div>
-        <div class="reviewer-name">Xian Sun</div>
-        <div class="reviewer-name">Shobhnik Kriplani</div>
-        <div class="reviewer-name">Haiwen Li</div>
-        <div class="reviewer-name">Vidya Ganesh</div>
-        <div class="reviewer-name">Aprameya Bharadwaj</div>
-        <div class="reviewer-name">Nikhil Reddy Pallepati</div>
-        <div class="reviewer-name">Tommaso Cerruti</div>
-        <div class="reviewer-name">Sukrati Gautam</div>
-        <div class="reviewer-name">Yixiong Hao</div>
-        <div class="reviewer-name">Giuseppe Trimigno</div>
-        <div class="reviewer-name">Hrithik Ravi</div>
-        <div class="reviewer-name">Bhavin Parekh</div>
-        <div class="reviewer-name">Winston Chen</div>
-        <div class="reviewer-name">Partha Sarathi Purkayastha</div>
-        <div class="reviewer-name">Jasmine Xinze Li</div>
-        <div class="reviewer-name">Shilpa Noushad</div>
-        <div class="reviewer-name">Xinran Zhang</div>
-        <div class="reviewer-name">Shahram Najam Syed</div>
-        <div class="reviewer-name">Zhichao Fan</div>
-        <div class="reviewer-name">Abdul Rasheed Shaik</div>
-        <div class="reviewer-name">Rob Sneiderman</div>
-        <div class="reviewer-name">Muhammad S. Abdo</div>
-        <div class="reviewer-name">Neel Tushar Shah</div>
-        <div class="reviewer-name">Suwen Ge</div>
-        <div class="reviewer-name">Anisha Pal</div>
-        <div class="reviewer-name">Anurag Kashyap</div>
-        <div class="reviewer-name">Raffaele Mura</div>
-        <div class="reviewer-name">Anisha Anil Jadhav</div>
-        <div class="reviewer-name">Hengyang Zhou</div>
-        <div class="reviewer-name">Akash Kundu</div>
-        <div class="reviewer-name">Eric S. Qiu</div>
-        <div class="reviewer-name">Sivakumar Selvaraj</div>
-        <div class="reviewer-name">Md Muntaqim Meherab</div>
-        <div class="reviewer-name">Jonathan Chen</div>
-        <div class="reviewer-name">Vangjush Kostandin Komini</div>
-        <div class="reviewer-name">Dipanwita Guhathakurta</div>
-        <div class="reviewer-name">Deep Kumar Ganguly</div>
-        <div class="reviewer-name">Lucky Verma</div>
-        <div class="reviewer-name">Xiangyu Guo</div>
-        <div class="reviewer-name">Victoria Cimpu</div>
-        <div class="reviewer-name">Ushashi Bhattacharjee</div>
-        <div class="reviewer-name">Hillary N. Owusu</div>
-        <div class="reviewer-name">Haoyun Feng</div>
-        <div class="reviewer-name">Jehyeok Yeon</div>
-        <div class="reviewer-name">Saket Saurabh</div>
-        <div class="reviewer-name">Aman Mehta</div>
-        <div class="reviewer-name">Léo le Douarec</div>
-        <div class="reviewer-name">Amr Hegazy</div>
-        <div class="reviewer-name">Xiaoyu Xu</div>
-        <div class="reviewer-name">Yejin Son</div>
-        <div class="reviewer-name">Sushant Mehta</div>
-        <div class="reviewer-name">Thomas Brink</div>
-        <div class="reviewer-name">Hieu Nguyen</div>
-        <div class="reviewer-name">Arjun Chakraborty</div>
-        <div class="reviewer-name">Luca Scionis</div>
-        <div class="reviewer-name">Ahmed Wez</div>
-        <div class="reviewer-name">Maryam Fatima</div>
-        <div class="reviewer-name">Zihao Jing</div>
-        <div class="reviewer-name">Elisabetta Rocchetti</div>
-        <div class="reviewer-name">Xinyu Ge</div>
-        <div class="reviewer-name">Samee Arif</div>
-        <div class="reviewer-name">Jacob Sansom</div>
-        <div class="reviewer-name">Sharvin Goyal</div>
-        <div class="reviewer-name">Lalit Yadav</div>
-        <div class="reviewer-name">Mohammad Saqlain</div>
-        <div class="reviewer-name">Humaira Kousar</div>
-        <div class="reviewer-name">Abdelrahman Sayed Sayed</div>
-        <div class="reviewer-name">Yihang Chen</div>
-        <div class="reviewer-name">Dennis Thumm</div>
-        <div class="reviewer-name">Emama Nahid</div>
-        <div class="reviewer-name">Muntaser Syed</div>
-        <div class="reviewer-name">Aysha Sohail</div>
-        <div class="reviewer-name">Divya Singh</div>
-        <div class="reviewer-name">Ashish Mehta</div>
-        <div class="reviewer-name">Khang Vo Huynh</div>
-        <div class="reviewer-name">Vineet Punyamoorty</div>
-        <div class="reviewer-name">Parth Hiren Shah</div>
-        <div class="reviewer-name">Sparsh Rastogi</div>
-        <div class="reviewer-name">Tony Yang</div>
-        <div class="reviewer-name">Mudit Sinha</div>
-        <div class="reviewer-name">Mahalakshmi Venkateswarlu</div>
-        <div class="reviewer-name">Shrey Ganatra</div>
-        <div class="reviewer-name">Bartosz Dzionek</div>
-        <div class="reviewer-name">Kunal Relia</div>
-        <div class="reviewer-name">Gopal Dev</div>
-        <div class="reviewer-name">Ugochi Adaku Okengwu</div>
-        <div class="reviewer-name">Erivan Inan</div>
-        <div class="reviewer-name">Nazia Aslam</div>
-        <div class="reviewer-name">Hyungjoo Chae</div>
-        <div class="reviewer-name">Catherine Ge-Wang</div>
-        <div class="reviewer-name">Pranjali Yadav</div>
-        <div class="reviewer-name">Zexin Zhuang</div>
-        <div class="reviewer-name">Pranav Maheshwari</div>
-        <div class="reviewer-name">Manshi Limbu</div>
-        <div class="reviewer-name">Shivani Shekhar</div>
-        <div class="reviewer-name">Krishnam Gupta</div>
-        <div class="reviewer-name">Pranav Ladkat</div>
-        <div class="reviewer-name">Sushma Anand Akoju</div>
-        <div class="reviewer-name">Chen Zhao</div>
-        <div class="reviewer-name">Aman Gokrani</div>
-        <div class="reviewer-name">Abhay Bhandarkar</div>
-        <div class="reviewer-name">Francesco Ortu</div>
-        <div class="reviewer-name">Sachin Gupta</div>
-        <div class="reviewer-name">Larnell Moore</div>
-        <div class="reviewer-name">Vaibhav Singh</div>
-        <div class="reviewer-name">Hyunjin Cho</div>
-        <div class="reviewer-name">Wei-Jung Huang</div>
-        <div class="reviewer-name">Chengheng Li Chen</div>
-        <div class="reviewer-name">Pinchao Zhang</div>
-        <div class="reviewer-name">Fahad Shamshad</div>
     </div>
   </div>
 </div>
 
 <!-- ===== FOOTER ===== -->
 <div class="gsites-footer">
-  AI4GOOD Workshop @ ICML 2026 &middot; Seoul, South Korea
+  AI4GOOD Workshop @ NeurIPS 2026
 </div>
 
 </body>
