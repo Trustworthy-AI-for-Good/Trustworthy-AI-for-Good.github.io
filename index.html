@@ -4,15 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI4GOOD @ NeurIPS 2026 | Trustworthy AI for Good</title>
+  <link rel="icon" type="image/png" href="images/brand/ai4good-avatar.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
+    @font-face {
+      font-family: 'Muro';
+      src: url('fonts/muro/Muro.otf') format('opentype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
     /* ===== GOOGLE SITES RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Roboto', Arial, sans-serif;
+      font-family: 'Barlow', Arial, sans-serif;
       font-size: 15px;
       color: #3c4043;
       background: #fff;
@@ -20,7 +29,14 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: #1a73e8; text-decoration: none; }
+    h1, h2, h3, h4,
+    .gsites-hero h1,
+    .gsites-hero .hero-overline {
+      font-family: 'Muro', 'Barlow', Arial, sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    a { color: #69b585; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* ===== GOOGLE SITES TOP NAV ===== */
@@ -30,7 +46,7 @@
       z-index: 1000;
       background: #fff;
       border-bottom: 1px solid #dadce0;
-      height: 64px;
+      height: 80px;
       display: flex;
       align-items: center;
       padding: 0 24px;
@@ -44,11 +60,18 @@
       gap: 16px;
     }
     .gsites-nav-title {
-      font-size: 20px;
-      font-weight: 400;
-      color: #3c4043;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
       text-decoration: none;
       white-space: nowrap;
+    }
+    .gsites-nav-title:hover { text-decoration: none; }
+    .gsites-nav-title img,
+    .gsites-nav-title svg {
+      display: block;
+      height: 56px;
+      width: auto;
     }
     .gsites-nav-links {
       display: flex;
@@ -71,8 +94,8 @@
     }
     .gsites-nav-links li a:hover,
     .gsites-nav-workshop li a:hover {
-      border-bottom-color: #1a73e8;
-      color: #1a73e8;
+      border-bottom-color: #69b585;
+      color: #69b585;
       text-decoration: none;
     }
     .gsites-nav-workshop {
@@ -97,12 +120,12 @@
       white-space: nowrap;
     }
     .gsites-nav-workshop li a.active {
-      border-bottom-color: #1a73e8;
-      color: #1a73e8;
+      border-bottom-color: #69b585;
+      color: #69b585;
     }
     .gsites-nav-links li a.active {
-      border-bottom-color: #1a73e8;
-      color: #1a73e8;
+      border-bottom-color: #69b585;
+      color: #69b585;
     }
 
     /* ===== HERO / TITLE BANNER (Google Sites style) ===== */
@@ -118,7 +141,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 4px;
-      background: #1a73e8;
+      background: #69b585;
     }
     .gsites-hero .hero-overline {
       font-size: 14px;
@@ -164,10 +187,10 @@
       text-align: center;
     }
     .gsites-hero .btn-primary {
-      background: #1a73e8;
+      background: #69b585;
       color: #fff;
     }
-    .gsites-hero .btn-primary:hover { background: #1765cc; text-decoration: none; }
+    .gsites-hero .btn-primary:hover { background: #549a6e; text-decoration: none; }
     .gsites-hero .btn-outline {
       border: 1px solid rgba(255,255,255,0.5);
       color: #fff;
@@ -198,7 +221,7 @@
     .faq-item h4 {
       font-size: 14px;
       font-weight: 500;
-      color: #1a73e8;
+      color: #69b585;
       margin-bottom: 6px;
     }
     .faq-item p {
@@ -255,7 +278,7 @@
     }
     .highlight-chip {
       flex: 1;
-      background: #e8f0fe;
+      background: #e8f5ee;
       border-radius: 8px;
       padding: 16px 20px;
       text-align: center;
@@ -263,7 +286,7 @@
     .highlight-chip h4 {
       font-size: 14px;
       font-weight: 500;
-      color: #1a73e8;
+      color: #69b585;
       margin-bottom: 4px;
     }
     .highlight-chip p {
@@ -298,14 +321,14 @@
       line-height: 1.6;
     }
     .topic-card.special {
-      border-left: 3px solid #1a73e8;
+      border-left: 3px solid #69b585;
       background: #f8f9fa;
     }
     .topic-card.special .special-label {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #1a73e8;
+      color: #69b585;
       font-weight: 500;
       margin-bottom: 4px;
       display: block;
@@ -322,7 +345,7 @@
     .submission-item:last-child { border-bottom: none; }
     .check-icon {
       flex-shrink: 0;
-      color: #1a73e8;
+      color: #69b585;
       font-size: 18px;
       margin-top: 1px;
       font-weight: 700;
@@ -366,7 +389,6 @@
       color: #5f6368;
     }
     .oral-paper-title {
-      font-family: Georgia, 'Times New Roman', serif;
       font-size: 14px;
       line-height: 1.45;
     }
@@ -386,7 +408,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #1a73e8;
+      color: #69b585;
       margin-bottom: 10px;
     }
     .award-paper {
@@ -397,11 +419,10 @@
       background: #fff;
     }
     .award-paper.best {
-      border-left: 3px solid #1a73e8;
+      border-left: 3px solid #69b585;
       background: #f8f9fa;
     }
     .award-paper-title {
-      font-family: Georgia, 'Times New Roman', serif;
       font-size: 16px;
       font-weight: 400;
       color: #202124;
@@ -429,7 +450,7 @@
       flex-shrink: 0;
       font-weight: 500;
       font-size: 14px;
-      color: #1a73e8;
+      color: #69b585;
     }
     .date-row .date-label { font-size: 14px; color: #3c4043; }
 
@@ -455,8 +476,8 @@
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: #e8f0fe;
-      color: #1a73e8;
+      background: #e8f5ee;
+      color: #69b585;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -536,21 +557,6 @@
       padding-bottom: 36px;
     }
     .org-card { text-align: center; }
-    #sponsors .organizers-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-    }
-    #sponsors .org-card { flex: 0 0 auto; min-width: 0; }
-    #sponsors .org-card img {
-      width: 140px;
-      height: 140px;
-      border-radius: 0;
-      object-fit: contain;
-      background: transparent;
-    }
-    #sponsors .org-card .initials-circle { width: 120px; height: 120px; font-size: 24px; }
     .org-card img {
       width: 120px;
       height: 120px;
@@ -564,8 +570,8 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: #e8f0fe;
-      color: #1a73e8;
+      background: #e8f5ee;
+      color: #69b585;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -599,7 +605,6 @@
         flex: 0 0 calc(50% - 18px);
         max-width: calc(50% - 18px);
       }
-      #sponsors .organizers-grid { flex-wrap: wrap; }
       .pres-row { flex-direction: column; }
       .date-row { flex-direction: column; gap: 2px; }
       .date-row .date-val { width: auto; }
@@ -624,7 +629,19 @@
 <!-- ===== NAV ===== -->
 <nav class="gsites-nav">
   <div class="gsites-nav-inner">
-    <a href="index.html" class="gsites-nav-title">Trustworthy AI4GOOD</a>
+    <a href="index.html" class="gsites-nav-title" aria-label="AI4GOOD">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" width="308" height="56" role="img" aria-label="AI4GOOD">
+        <g transform="translate(18,20)">
+          <circle cx="0" cy="0" r="13.5" fill="none" stroke="#1c1e24" stroke-width="2.6"
+            stroke-linecap="round" stroke-dasharray="55.8 29" transform="rotate(18)"/>
+          <circle cx="0" cy="0" r="13.5" fill="none" stroke="#308858" stroke-width="2.6"
+            stroke-linecap="round" stroke-dasharray="21 63.8" transform="rotate(-90)"/>
+        </g>
+        <text x="40" y="26.5" font-family="Muro, Helvetica Neue, Arial, sans-serif" font-weight="700" font-size="22" letter-spacing="0.5">
+          <tspan fill="#1c1e24">AI4</tspan><tspan fill="#308858">GOOD</tspan>
+        </text>
+      </svg>
+    </a>
     <ul class="gsites-nav-workshop">
       <li><a href="index.html" class="active">NeurIPS 2026</a></li>
       <li><a href="icml-2026.html">ICML 2026</a></li>
@@ -887,19 +904,6 @@
         <img src="images/christian_schroeder_de_witt.png" alt="Christian Schroeder de Witt" />
         <h4><a href="https://wittlab.ai/author/christian-schroeder-de-witt/" target="_blank" rel="noopener">Christian Schroeder de Witt</a></h4>
         <p class="aff">University of Oxford</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== Sponsors ===== -->
-<div class="gsites-section bg-light" id="sponsors">
-  <div class="gsites-container">
-    <h2>Sponsors</h2>
-    <div class="organizers-grid">
-      <div class="org-card">
-        <img src="images/google_deepmind_logo.png?v=2" alt="Google DeepMind" />
-        <h4>Google DeepMind</h4>
       </div>
     </div>
   </div>

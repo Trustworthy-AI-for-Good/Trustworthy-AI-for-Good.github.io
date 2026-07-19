@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" role="img" aria-label="AI4GOOD">
+  <defs>
+    <style>
+      .wm { font-family: 'Muro', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.5px; }
+    </style>
+  </defs>
+  <!-- progress-ring mark: green in upper-right (12–3 o'clock) -->
+  <g transform="translate(18,20)">
+    <circle cx="0" cy="0" r="13.5" fill="none" stroke="#1c1e24" stroke-width="2.6"
+      stroke-linecap="round" stroke-dasharray="55.8 29" transform="rotate(18)"/>
+    <circle cx="0" cy="0" r="13.5" fill="none" stroke="#308858" stroke-width="2.6"
+      stroke-linecap="round" stroke-dasharray="21 63.8" transform="rotate(-90)"/>
+  </g>
+  <text x="40" y="26.5" class="wm">
+    <tspan fill="#1c1e24">AI4</tspan><tspan fill="#308858">GOOD</tspan>
+  </text>
+</svg>
