@@ -319,6 +319,83 @@
       display: block;
     }
 
+    .special-track-card {
+      margin-top: 20px;
+      margin-bottom: 4px;
+      border: 1px solid #dadce0;
+      border-left: 3px solid #69b585;
+      border-radius: 8px;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    .special-track-card .special-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #69b585;
+      font-weight: 500;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .special-track-card h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #202124;
+    }
+    .special-track-card .special-track-summary,
+    .special-track-card .special-track-details p {
+      font-size: 14px;
+      color: #5f6368;
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+    .special-track-card .co-hosts {
+      font-size: 14px;
+      color: #3c4043;
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+    .special-track-toggle {
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: #69b585;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .special-track-toggle:hover { text-decoration: underline; }
+    .special-track-details {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #e8eaed;
+    }
+    .special-track-details[hidden] { display: none; }
+    .special-track-card .references {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #5f6368;
+    }
+    .special-track-card .references h4 {
+      font-size: 13px;
+      font-weight: 500;
+      color: #202124;
+      margin: 0 0 8px;
+    }
+    .special-track-card .references ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .special-track-card .references li {
+      margin-bottom: 6px;
+      line-height: 1.55;
+    }
+
     /* ===== SUBMISSION ITEMS ===== */
     .submission-item {
       display: flex;
@@ -688,6 +765,25 @@
   <div class="gsites-container">
     <h2>Call for Papers</h2>
     <p>We welcome submissions in a wide range of topics (if you're not sure about your paper, we encourage you to just submit!).</p>
+
+    <div class="special-track-card" id="special-track">
+      <span class="special-label">Special Track</span>
+      <h3>Multi-agent Security and Safety</h3>
+      <p class="co-hosts">This track will be co-hosted by <a href="https://scholar.google.com/citations?user=pDP5MxcAAAAJ&amp;hl=pl" target="_blank" rel="noopener">Klaudia Krawiecka</a> and <a href="https://mehtaver.se/" target="_blank" rel="noopener">Swapneel Mehta</a>.</p>
+      <p class="special-track-summary">Topics include collusion and steganographic communication between agents, secure interaction and delegation protocols, confinement of strategic learned agents, compositional failures of safety and compliance guarantees, attacks that propagate across agent networks, evaluation and red-teaming of agent populations, and oversight and incident response for deployed multi-agent systems.</p>
+      <button type="button" class="special-track-toggle" id="special-track-toggle" aria-expanded="false" aria-controls="special-track-details">Read full call for papers</button>
+      <div class="special-track-details" id="special-track-details" hidden>
+        <p>Advanced AI systems are increasingly deployed as networks of interacting agents rather than as isolated models. Their most consequential failure modes are collective (Hammond et al., 2025; Schroeder de Witt et al., 2025). Individually safe agents can jointly produce unsafe outcomes, and legitimate communication channels can be repurposed for covert coordination. This track invites submissions on the security and safety of multi-agent AI systems. Topics include collusion and steganographic communication between agents, secure interaction and delegation protocols, confinement of strategic learned agents, compositional failures of safety and compliance guarantees, attacks that propagate across agent networks, evaluation and red-teaming of agent populations, and oversight and incident response for deployed multi-agent systems. We welcome theoretical, empirical, and position papers, and we particularly encourage work grounded in real deployments and societal applications.</p>
+        <div class="references">
+          <h4>References</h4>
+          <ul>
+            <li>Hammond et al. (2025). <em>Multi-Agent Risks from Advanced AI</em>. Cooperative AI Foundation, Technical Report #1. <a href="https://arxiv.org/abs/2502.14143" target="_blank" rel="noopener">arXiv:2502.14143</a>.</li>
+            <li>Schroeder de Witt et al. (2025). <em>Open Challenges in Multi-Agent Security: Towards Secure Systems of Interacting AI Agents</em>. <a href="https://arxiv.org/abs/2505.02077" target="_blank" rel="noopener">arXiv:2505.02077</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="topics-grid">
       <div class="topic-card">
         <h3>Trustworthy AI Models</h3>
@@ -974,6 +1070,17 @@
       scrollOrganizers();
     });
   });
+
+  var specialTrackToggle = document.getElementById('special-track-toggle');
+  var specialTrackDetails = document.getElementById('special-track-details');
+  if (specialTrackToggle && specialTrackDetails) {
+    specialTrackToggle.addEventListener('click', function () {
+      var expanded = specialTrackToggle.getAttribute('aria-expanded') === 'true';
+      specialTrackToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      specialTrackDetails.hidden = expanded;
+      specialTrackToggle.textContent = expanded ? 'Read full call for papers' : 'Show less';
+    });
+  }
 
   function scrollIfHash() {
     if (location.hash === '#organizers') {
