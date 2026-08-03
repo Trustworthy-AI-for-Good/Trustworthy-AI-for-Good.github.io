@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="images/brand/ai4good-avatar.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
     /* ===== GOOGLE SITES RESET ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -498,23 +498,126 @@
       margin: 0;
     }
 
-    /* ===== DATES ===== */
-    .dates-table { margin-top: 16px; width: 100%; }
-    .date-row {
-      display: flex;
-      padding: 14px 0;
-      border-bottom: 1px solid #e8eaed;
-      align-items: center;
+    /* ===== DATES TIMELINE ===== */
+    .dates-timeline-panel {
+      margin-top: 20px;
+      padding: 36px 32px 28px;
+      border-radius: 12px;
+      background: linear-gradient(160deg, #101820 0%, #0d1218 100%);
+      color: #fff;
+      overflow: hidden;
     }
-    .date-row:last-child { border-bottom: none; }
-    .date-row .date-val {
-      width: 180px;
-      flex-shrink: 0;
+    .dates-timeline-panel .dates-kicker {
+      font-size: 11px;
       font-weight: 500;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #c8d0d8;
+      margin: 0 0 8px;
+    }
+    .dates-timeline-panel .dates-note {
+      font-size: 13px;
+      color: #e8eaed;
+      margin: 0 0 28px;
+      max-width: 640px;
+    }
+    .dates-timeline-panel .dates-note strong { color: #fff; font-weight: 500; }
+    .dates-timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      min-height: 180px;
+      padding: 0 8px;
+    }
+    .dates-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 50%;
+      height: 3px;
+      background: #2a3540;
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+    .timeline-milestone {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 1;
+    }
+    .timeline-milestone.timeline-above {
+      justify-content: flex-end;
+      padding-bottom: calc(50% + 18px);
+    }
+    .timeline-milestone.timeline-below {
+      justify-content: flex-start;
+      padding-top: calc(50% + 18px);
+    }
+    .milestone-dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #3d4f5f;
+      background: #101820;
+      box-sizing: border-box;
+    }
+    .timeline-milestone.timeline-past .milestone-dot {
+      border-color: #69b585;
+      background: #69b585;
+    }
+    .timeline-milestone.timeline-active .milestone-dot {
+      width: 18px;
+      height: 18px;
+      border: none;
+      background: #69b585;
+      box-shadow: 0 0 0 4px rgba(105, 181, 133, 0.25);
+    }
+    .milestone-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 130px;
+    }
+    .timeline-above .milestone-content { flex-direction: column-reverse; }
+    .milestone-date {
+      font-family: 'Roboto Mono', ui-monospace, monospace;
+      font-size: 11px;
+      color: #69b585;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+    .milestone-label {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #f1f3f4;
+      line-height: 1.35;
+    }
+    .milestone-badge {
+      font-family: 'Roboto Mono', ui-monospace, monospace;
+      font-size: 10px;
+      color: #69b585;
+      letter-spacing: 0.04em;
+      margin-bottom: 2px;
+    }
+    .timeline-milestone:not(.timeline-active) .milestone-badge { display: none; }
+    .dates-cfp-link {
+      display: inline-block;
+      margin-top: 24px;
+      font-family: Georgia, 'Times New Roman', serif;
       font-size: 14px;
       color: #69b585;
+      text-decoration: none;
     }
-    .date-row .date-label { font-size: 14px; color: #3c4043; }
+    .dates-cfp-link:hover { text-decoration: underline; }
 
     /* ===== PEOPLE GRID (Google Sites circular photos) ===== */
     .people-grid {
@@ -668,8 +771,41 @@
         max-width: calc(50% - 18px);
       }
       .pres-row { flex-direction: column; }
-      .date-row { flex-direction: column; gap: 2px; }
-      .date-row .date-val { width: auto; }
+      .dates-timeline {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 0;
+      }
+      .dates-timeline::before {
+        left: 20px;
+        right: auto;
+        top: 12px;
+        bottom: 12px;
+        width: 3px;
+        height: auto;
+        transform: none;
+      }
+      .timeline-milestone {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        padding: 0 0 24px 44px !important;
+        min-height: 0;
+      }
+      .timeline-milestone.timeline-above,
+      .timeline-milestone.timeline-below {
+        justify-content: flex-start;
+        padding-top: 0 !important;
+        padding-bottom: 24px !important;
+      }
+      .timeline-above .milestone-content { flex-direction: column; }
+      .milestone-dot {
+        top: 6px;
+        left: 20px;
+        transform: translateX(-50%);
+      }
+      .dates-timeline-panel { padding: 28px 20px 20px; }
+      .milestone-content { max-width: none; }
       .gsites-nav-links li a,
       .gsites-nav-workshop li a { padding: 20px 10px; font-size: 12px; }
     }
@@ -843,28 +979,48 @@
 <div class="gsites-section bg-light" id="dates">
   <div class="gsites-container">
     <h2>Important Dates</h2>
-    <p>All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted.</p>
-    <div class="dates-table">
-      <div class="date-row">
-        <div class="date-val">July 30, 2026</div>
-        <div class="date-label">Submission Portal Opens</div>
+    <div class="dates-timeline-panel">
+      <p class="dates-kicker">Key Dates</p>
+      <p class="dates-note">All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted.</p>
+      <div class="dates-timeline">
+        <div class="timeline-milestone timeline-above timeline-past">
+          <div class="milestone-content">
+            <span class="milestone-date">30 Jul 2026</span>
+            <span class="milestone-label">Submission Portal Opens</span>
+          </div>
+          <span class="milestone-dot" aria-hidden="true"></span>
+        </div>
+        <div class="timeline-milestone timeline-below timeline-active">
+          <div class="milestone-content">
+            <span class="milestone-badge">Upcoming</span>
+            <span class="milestone-label">Paper Submission Deadline</span>
+            <span class="milestone-date">29 Aug 2026</span>
+          </div>
+          <span class="milestone-dot" aria-hidden="true"></span>
+        </div>
+        <div class="timeline-milestone timeline-above">
+          <div class="milestone-content">
+            <span class="milestone-date">29 Sep 2026</span>
+            <span class="milestone-label">Author Notification</span>
+          </div>
+          <span class="milestone-dot" aria-hidden="true"></span>
+        </div>
+        <div class="timeline-milestone timeline-below">
+          <div class="milestone-content">
+            <span class="milestone-label">Camera Ready Deadline</span>
+            <span class="milestone-date">29 Nov 2026</span>
+          </div>
+          <span class="milestone-dot" aria-hidden="true"></span>
+        </div>
+        <div class="timeline-milestone timeline-above">
+          <div class="milestone-content">
+            <span class="milestone-date">12 Dec 2026</span>
+            <span class="milestone-label">Workshop Date</span>
+          </div>
+          <span class="milestone-dot" aria-hidden="true"></span>
+        </div>
       </div>
-      <div class="date-row">
-        <div class="date-val">August 29, 2026</div>
-        <div class="date-label">Paper Submission Deadline</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">September 29, 2026</div>
-        <div class="date-label">Author Notification</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">November 29, 2026</div>
-        <div class="date-label">Camera Ready Deadline</div>
-      </div>
-      <div class="date-row">
-        <div class="date-val">December 12, 2026</div>
-        <div class="date-label">Workshop Date</div>
-      </div>
+      <a href="#topics" class="dates-cfp-link">Full Call for Papers &rarr;</a>
     </div>
   </div>
 </div>
@@ -898,6 +1054,11 @@
         <img src="images/Sanmi_Koyejo.jpg" alt="Sanmi Koyejo" style="object-position: center 18%;" />
         <h4><a href="https://cs.stanford.edu/~sanmi/" target="_blank" rel="noopener">Sanmi Koyejo</a></h4>
         <p class="aff">Stanford University</p>
+      </div>
+      <div class="person-card">
+        <img src="images/john_sotiropoulos.png" alt="John Sotiropoulos" />
+        <h4><a href="https://www.linkedin.com/in/jsotiropoulos/" target="_blank" rel="noopener">John Sotiropoulos</a></h4>
+        <p class="aff">Deep Cyber &amp; OWASP GenAI Security Project</p>
       </div>
     </div>
   </div>
