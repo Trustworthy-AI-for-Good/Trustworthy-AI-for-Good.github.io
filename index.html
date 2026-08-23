@@ -762,6 +762,21 @@
       margin-top: 24px;
     }
 
+    /* ===== SPONSORS ===== */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .sponsors-grid .org-card { flex: 0 1 180px; }
+    .sponsors-grid .org-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
     /* ===== FOOTER (Google Sites style) ===== */
     .gsites-footer {
       background: #f1f3f4;
@@ -785,6 +800,7 @@
         flex: 0 0 calc(50% - 18px);
         max-width: calc(50% - 18px);
       }
+      .sponsors-grid .org-card { flex-basis: calc(50% - 8px); }
       .pres-row { flex-direction: column; }
       .dates-timeline {
         grid-template-columns: 1fr;
@@ -1193,6 +1209,23 @@
         <img src="images/swapneel_mehta.jpeg" alt="Swapneel Mehta" />
         <h4><a href="https://mehtaver.se/" target="_blank" rel="noopener">Swapneel Mehta</a></h4>
         <p class="aff">MIT</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SPONSORS ===== -->
+<div class="gsites-section bg-light" id="sponsors">
+  <div class="gsites-container">
+    <h2>Sponsors</h2>
+    <div class="sponsors-grid">
+      <div class="org-card">
+        <img src="images/iaseai_logo.jpeg" alt="IASEAI" />
+        <h4><a href="https://www.iaseai.org/" target="_blank" rel="noopener">International Association for Safe and Ethical AI</a></h4>
+      </div>
+      <div class="org-card">
+        <img src="images/sri_logo.png?v=2" alt="Schwartz Reisman Institute for Technology and Society" />
+        <h4><a href="https://srinstitute.utoronto.ca/" target="_blank" rel="noopener">Schwartz Reisman Institute for Technology and Society</a></h4>
       </div>
     </div>
   </div>
