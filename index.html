@@ -451,6 +451,43 @@
       background: #fff;
     }
 
+    /* ===== WORKSHOP SCHEDULE ===== */
+    .schedule-list {
+      max-width: 760px;
+      margin: 24px auto 0;
+      border: 1px solid #dadce0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .schedule-item {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      gap: 24px;
+      padding: 15px 20px;
+      border-bottom: 1px solid #e8eaed;
+      align-items: baseline;
+    }
+    .schedule-item:last-child { border-bottom: none; }
+    .schedule-time {
+      color: #3f8058;
+      font-size: 14px;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+    .schedule-event {
+      color: #202124;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .schedule-note {
+      display: block;
+      margin-top: 3px;
+      color: #5f6368;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
     .encourage-list {
       margin-top: 16px;
       padding-left: 24px;
@@ -805,6 +842,20 @@
       height: 100px;
       object-fit: contain;
     }
+    .sponsors-grid .sponsor-wordmark {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #f0f6ff;
+      color: #0866ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
 
     /* ===== FOOTER (Google Sites style) ===== */
     .gsites-footer {
@@ -830,6 +881,10 @@
         max-width: calc(50% - 18px);
       }
       .sponsors-grid .org-card { flex-basis: calc(50% - 8px); }
+      .schedule-item {
+        grid-template-columns: 1fr;
+        gap: 3px;
+      }
       .pres-row { flex-direction: column; }
       .dates-timeline {
         grid-template-columns: 1fr;
@@ -931,7 +986,7 @@
   <p class="hero-overline">Workshop</p>
   <h1>Trustworthy AI for Good @ NeurIPS 2026</h1>
   <p class="hero-note"><strong>Submission deadline EXTENDED to Sept 1 AOE</strong></p>
-  <p class="hero-meta">Date: 12/13 Dec &nbsp;|&nbsp; Location: Paris, France</p>
+  <p class="hero-meta">Date: 12 Dec &nbsp;|&nbsp; Time: 10:00&ndash;17:00 &nbsp;|&nbsp; Location: Room 252 AB, Palais des Congr&egrave;s de Paris</p>
   <div class="hero-links">
     <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AI4GOOD" class="btn-primary" target="_blank" rel="noopener">Submit on OpenReview</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSewXggPpBlTptN1NJusMvOhTpms3y0MXJuK7hAOlj52OWUrsA/viewform?usp=send_form" class="btn-primary" target="_blank" rel="noopener">I'd Like to Be a Reviewer: Register Here!</a>
@@ -940,19 +995,48 @@
   <p class="hero-note">Sponsors: We're open for sponsorship with PR benefits! Please email <a href="mailto:zjingchen@cs.toronto.edu">zjingchen@cs.toronto.edu</a> directly!</p>
 </div>
 
+<!-- ===== SPEAKERS ===== -->
+<div class="gsites-section" id="speakers">
+  <div class="gsites-container">
+    <h2>Speakers</h2>
+    <div class="people-grid">
+      <div class="person-card">
+        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
+        <h4><a href="https://yoshuabengio.org/" target="_blank" rel="noopener">Yoshua Bengio</a></h4>
+        <p class="aff">University of Montreal &amp; Mila &amp; LawZero</p>
+      </div>
+      <div class="person-card">
+        <img src="images/pavel_izmailov.jpg" alt="Pavel Izmailov" />
+        <h4><a href="https://izmailovpavel.github.io/" target="_blank" rel="noopener">Pavel Izmailov</a></h4>
+        <p class="aff">New York University &amp; Anthropic</p>
+      </div>
+      <div class="person-card">
+        <img src="images/joelle-pineau.jpeg" alt="Joelle Pineau" />
+        <h4><a href="https://www.cs.mcgill.ca/~jpineau/" target="_blank" rel="noopener">Joelle Pineau</a></h4>
+        <p class="aff">McGill University &amp; Mila &amp; Cohere</p>
+      </div>
+      <div class="person-card">
+        <img src="images/Been_Kim.jpg" alt="Been Kim" />
+        <h4><a href="https://beenkim.github.io/" target="_blank" rel="noopener">Been Kim</a></h4>
+        <p class="aff">Google DeepMind</p>
+      </div>
+      <div class="person-card">
+        <img src="images/Sanmi_Koyejo.jpg" alt="Sanmi Koyejo" style="object-position: center 18%;" />
+        <h4><a href="https://cs.stanford.edu/~sanmi/" target="_blank" rel="noopener">Sanmi Koyejo</a></h4>
+        <p class="aff">Stanford University</p>
+      </div>
+      <div class="person-card">
+        <img src="images/john_sotiropoulos.png" alt="John Sotiropoulos" />
+        <h4><a href="https://www.linkedin.com/in/jsotiropoulos/" target="_blank" rel="noopener">John Sotiropoulos</a></h4>
+        <p class="aff">Deep Cyber &amp; OWASP</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ===== DATES ===== -->
 <div class="gsites-section bg-light" id="dates">
   <div class="gsites-container">
-    <div class="proceedings-partner" aria-label="Proceedings partner">
-      <div class="proceedings-copy">
-        <span class="partner-label">Proceedings Partner</span>
-        <h3>Publish with Springer in LNCS</h3>
-        <p><strong>Proceedings publication is optional and by author choice.</strong> The workshop is non-archival by default.</p>
-      </div>
-      <a class="proceedings-logo-link" href="https://link.springer.com/series/558" target="_blank" rel="noopener" aria-label="LNCS">
-        <img src="images/springer-lncs-logo.jpg" alt="Springer — Lecture Notes in Computer Science" />
-      </a>
-    </div>
     <h2>Important Dates</h2>
     <div class="dates-timeline-panel">
       <p class="dates-note">All deadlines are <strong>11:59 PM Anywhere on Earth (AoE)</strong> unless otherwise noted.</p>
@@ -1108,50 +1192,52 @@
   </div>
 </div>
 
-<!-- ===== SPEAKERS ===== -->
-<div class="gsites-section" id="speakers">
+<!-- ===== SCHEDULE ===== -->
+<div class="gsites-section bg-light" id="schedule">
   <div class="gsites-container">
-    <h2>Speakers</h2>
-    <div class="people-grid">
-      <div class="person-card">
-        <img src="images/yoshua_bengio.jpg" alt="Yoshua Bengio" />
-        <h4><a href="https://yoshuabengio.org/" target="_blank" rel="noopener">Yoshua Bengio</a></h4>
-        <p class="aff">University of Montreal &amp; Mila &amp; LawZero</p>
+    <h2>Workshop Schedule</h2>
+    <div class="schedule-list" aria-label="Workshop schedule">
+      <div class="schedule-item">
+        <span class="schedule-time">10:00&ndash;10:30</span>
+        <span class="schedule-event">Opening</span>
       </div>
-      <div class="person-card">
-        <img src="images/pavel_izmailov.jpg" alt="Pavel Izmailov" />
-        <h4><a href="https://izmailovpavel.github.io/" target="_blank" rel="noopener">Pavel Izmailov</a></h4>
-        <p class="aff">New York University &amp; Anthropic</p>
+      <div class="schedule-item">
+        <span class="schedule-time">10:30&ndash;11:30</span>
+        <span class="schedule-event">Online Panel</span>
       </div>
-      <div class="person-card">
-        <img src="images/joelle-pineau.jpeg" alt="Joelle Pineau" />
-        <h4><a href="https://www.cs.mcgill.ca/~jpineau/" target="_blank" rel="noopener">Joelle Pineau</a></h4>
-        <p class="aff">McGill University &amp; Mila &amp; Cohere</p>
+      <div class="schedule-item">
+        <span class="schedule-time">11:30&ndash;12:30</span>
+        <span class="schedule-event">Lunch Break</span>
       </div>
-      <div class="person-card">
-        <img src="images/Been_Kim.jpg" alt="Been Kim" />
-        <h4><a href="https://beenkim.github.io/" target="_blank" rel="noopener">Been Kim</a></h4>
-        <p class="aff">Google DeepMind</p>
+      <div class="schedule-item">
+        <span class="schedule-time">12:30&ndash;14:00</span>
+        <span class="schedule-event">Poster Session</span>
       </div>
-      <div class="person-card">
-        <img src="images/Sanmi_Koyejo.jpg" alt="Sanmi Koyejo" style="object-position: center 18%;" />
-        <h4><a href="https://cs.stanford.edu/~sanmi/" target="_blank" rel="noopener">Sanmi Koyejo</a></h4>
-        <p class="aff">Stanford University</p>
+      <div class="schedule-item">
+        <span class="schedule-time">14:00&ndash;15:30</span>
+        <span class="schedule-event">Oral Presentations</span>
       </div>
-      <div class="person-card">
-        <img src="images/john_sotiropoulos.png" alt="John Sotiropoulos" />
-        <h4><a href="https://www.linkedin.com/in/jsotiropoulos/" target="_blank" rel="noopener">John Sotiropoulos</a></h4>
-        <p class="aff">Deep Cyber &amp; OWASP</p>
+      <div class="schedule-item">
+        <span class="schedule-time">15:30&ndash;17:00</span>
+        <span class="schedule-event">Offline Panel<span class="schedule-note">Open-ended, relaxed discussion</span></span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ===== SCHEDULE ===== -->
-<div class="gsites-section bg-light" id="schedule">
+<!-- ===== PROCEEDINGS PARTNER ===== -->
+<div class="gsites-section">
   <div class="gsites-container">
-    <h2>Workshop Schedule</h2>
-    <p>The detailed schedule will be posted closer to the workshop date.</p>
+    <div class="proceedings-partner" aria-label="Proceedings partner">
+      <div class="proceedings-copy">
+        <span class="partner-label">Proceedings Partner</span>
+        <h3>Publish with Springer in LNCS</h3>
+        <p><strong>Proceedings publication is optional and by author choice.</strong> The workshop is non-archival by default.</p>
+      </div>
+      <a class="proceedings-logo-link" href="https://link.springer.com/series/558" target="_blank" rel="noopener" aria-label="LNCS">
+        <img src="images/springer-lncs-logo.jpg" alt="Springer — Lecture Notes in Computer Science" />
+      </a>
+    </div>
   </div>
 </div>
 
@@ -1164,6 +1250,16 @@
         <img src="images/terry_zhang.jpg" alt="Terry Jingchen Zhang" />
         <h4><a href="https://terry-zhang.notion.site/" target="_blank" rel="noopener">Terry Jingchen Zhang</a></h4>
         <p class="aff">University of Oxford &amp; Vector Institute</p>
+      </div>
+      <div class="org-card">
+        <img src="images/xuanqiang_angelo_huang.jpg" alt="Xuanqiang Angelo Huang" />
+        <h4><a href="https://flecart.github.io/" target="_blank" rel="noopener">Xuanqiang Angelo Huang</a></h4>
+        <p class="aff">ETH Z&uuml;rich &amp; EuroSafeAI</p>
+      </div>
+      <div class="org-card">
+        <img src="images/pepijn_cobben.png" alt="Pepijn Cobben" />
+        <h4><a href="https://foresight.org/people/pepijn-cobben/" target="_blank" rel="noopener">Pepijn Cobben</a></h4>
+        <p class="aff">ETH Z&uuml;rich &amp; EuroSafeAI</p>
       </div>
       <div class="org-card">
         <img src="images/changling_li.jpg" alt=Changling Li" />
@@ -1209,6 +1305,11 @@
         <img src="images/wenjun_qiu.jpg" alt="Wenjun Qiu" />
         <h4><a href="http://individual.utoronto.ca/wenjunqiu/" target="_blank" rel="noopener">Wenjun Qiu</a></h4>
         <p class="aff">University of Toronto &amp; Schwartz Reisman Graduate Fellow</p>
+      </div>
+      <div class="org-card">
+        <img src="images/ettore_gran.jpg" alt="Ettore Gran" />
+        <h4><a href="https://eurosafe.ai.toronto.edu/team" target="_blank" rel="noopener">Ettore Gran</a></h4>
+        <p class="aff">MIT &amp; EuroSafeAI</p>
       </div>
     </div>
     <div class="organizers-faculty">
@@ -1272,6 +1373,10 @@
       <div class="org-card">
         <img src="images/sri_logo.png?v=2" alt="Schwartz Reisman Institute for Technology and Society" />
         <h4><a href="https://srinstitute.utoronto.ca/" target="_blank" rel="noopener">Schwartz Reisman Institute for Technology and Society</a></h4>
+      </div>
+      <div class="org-card">
+        <div class="sponsor-wordmark" aria-hidden="true">Meta</div>
+        <h4><a href="https://about.meta.com/" target="_blank" rel="noopener">Meta</a></h4>
       </div>
     </div>
   </div>
